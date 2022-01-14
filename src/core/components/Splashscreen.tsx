@@ -1,7 +1,7 @@
 
 import { useRouter } from 'next/dist/client/router';
 import  { useEffect } from 'react';
-import handler from '../pages/api/hello';
+import handler from '../../pages/api/hello';
 
 
 

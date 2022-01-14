@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #app {
   height: 100%;
 }
@@ -10,7 +14,6 @@ body {
 body {
   user-select: none;
   background: #141414;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
   margin: 0;
@@ -24,6 +27,9 @@ span {
 }
 .svg {
   color: rgb(186, 196, 184);
+}
+.logo {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .swiper {
@@ -52,7 +58,7 @@ span {
 
 .swiper-slide img {
   display: block;
-  width: 50px;
+  width: 200px;
   height: 200px;
   /* object-fit: cover; */
 }

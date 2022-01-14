@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import className from '../classNames/Home.module.css'
-import { ThemeSwitcher } from '../components/Themes'
+import { ThemeSwitcher } from '../core/components/Themes'
 import router, { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
         <img className="w-full h-screen object-cover  opacity: 1" alt="" title="" src="/oui.gif"></img>
         <footer className="text-white fixed bottom-0 pb-5 w-full z-50">
         <div className="flex  lg:ml-10 lg:mr-10  pl-12 pr-12   space-y-4">
-            <div className="flex space-x-6 items-center text-white space-x-4  xxl:text-lg xl:text-sm lg:text-sm md:text-sm xs:text-sm xxs:text-xs font-bold flex-row w-full">
+            <div className="flex space-x-6 items-center text-white  xxl:text-lg xl:text-sm lg:text-sm md:text-sm xs:text-sm xxs:text-xs font-bold flex-row w-full">
             <ul >
               <li className="animate-pulse">
               <a className="space-x-1 flex" href="mailto:mehdi.jabbour@gmail.com"><svg className="lg:w-5 md:w-3 sm:w-3 xs:w-2 xxs:w-2 text-gray-400"version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 122.88 95.02"  ><g><path d="M6.09,0h93.94c1.67,0,3.2,0.69,4.3,1.79c1.1,1.1,1.79,2.63,1.79,4.3v64.56c0,1.26-0.39,2.44-1.05,3.41 c-0.12,0.31-0.31,0.61-0.57,0.86c-0.17,0.16-0.36,0.3-0.57,0.4c-1.06,0.88-2.42,1.42-3.89,1.42H6.09c-1.67,0-3.2-0.68-4.3-1.79 C0.69,73.84,0,72.32,0,70.64V6.09c0-1.68,0.68-3.2,1.79-4.3C2.89,0.68,4.41,0,6.09,0L6.09,0L6.09,0z M116.79,95.02H18.43 c-1.67,0-3.2-0.69-4.3-1.79c-1.1-1.1-1.79-2.63-1.79-4.3v-6.12h4.62v7.54h101.36V18.54h-6.16v-4.67h4.62c1.67,0,3.2,0.68,4.3,1.79 c1.1,1.1,1.79,2.62,1.79,4.3v68.98c0,1.68-0.68,3.2-1.79,4.3C119.99,94.34,118.47,95.02,116.79,95.02L116.79,95.02L116.79,95.02z M4.67,68.08l32.92-33L4.67,8.24V68.08L4.67,68.08L4.67,68.08z M41.22,38.03L7.27,72.06h91.28L66.12,38.04l-10.69,9.11l0,0 c-0.84,0.72-2.09,0.76-2.98,0.04L41.22,38.03L41.22,38.03L41.22,38.03z M69.67,35.02l31.78,33.33V7.94L69.67,35.02L69.67,35.02 L69.67,35.02z M7.66,4.67l46.22,37.68L98.11,4.67H7.66L7.66,4.67L7.66,4.67z"/></g></svg><span className="tracking-tight">Email</span></a> 
