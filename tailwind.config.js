@@ -18,7 +18,7 @@ module.exports = {
       ...defaultTheme.screens,
     },
     maxWidth: {
-      "8xl": "100rem",
+      "8xl": "110rem",
     },
     extend: {
       fontFamily: {

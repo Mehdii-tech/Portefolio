@@ -16,6 +16,7 @@ import SwiperCore, {
 
 import Layout from "../core/components/Layout";
 
+
 // install Swiper modules
 SwiperCore.use([Pagination, Mousewheel]);
 
@@ -26,9 +27,9 @@ export default function Caroussel() {
   
   return (
     <>
- <Layout >
-
- </Layout>
+<Layout>
+  
+</Layout>
     {/* <Swiper speed={400}  direction={'horizontal'} slidesPerView={1} spaceBetween={0} mousewheel={{sensitivity:1}}  centeredSlides={true} pagination={{
 
   "clickable": true,
