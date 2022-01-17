@@ -11,6 +11,29 @@ body {
   height: 100%;
 }
 
+@font-face {
+  font-family: "jws";
+  src: url("./fonts/_H_HelveticaNeueInterface_0.ttf") format("truetype"),
+    url("./fonts/_H_HelveticaNeueInterface_1.ttf") format("truetype"),
+    url("./fonts/_H_HelveticaNeueInterface_2.ttf") format("truetype"),
+    url("./fonts/_H_HelveticaNeueInterface_3.ttf") format("truetype"),
+    url("./fonts/_H_HelveticaNeueInterface_4.ttf") format("truetype"),
+    url("./fonts/_H_HelveticaNeueInterface.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TNY";
+  src: url("./fonts//SupersetRegular.ttf") format("truetype"),
+    url("./fonts/Superset\ Italic.ttf") format("truetype");
+  font-style: normal;
+}
+.n1 {
+  font-family: "TNY";
+}
+.n0 {
+  font-family: "jws";
+}
 body {
   user-select: none;
   background: #141414;
@@ -22,9 +45,10 @@ body {
 p {
   color: rgb(186, 196, 184);
 }
-span {
+.span {
   color: rgb(186, 196, 184);
 }
+
 .svg {
   color: rgb(186, 196, 184);
 }

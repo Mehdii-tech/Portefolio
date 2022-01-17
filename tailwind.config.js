@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 module.exports = {
   mode: "jit",
   content: [
@@ -11,6 +12,22 @@ module.exports = {
   ],
   darkMode: "class", // or 'media' or 'class'
   theme: {
+    fontSize: {
+      xxs: ["0.625rem", "0.625rem"],
+      xs: [".75rem", ".75rem"],
+      sm: ".875rem",
+      tiny: ".875rem",
+      base: "1rem",
+      lg: "1.125rem",
+      xl: "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem",
+      "6xl": "4rem",
+      "7xl": "5rem",
+      "8xl": "10rem",
+    },
     screens: {
       xxl: "2560px",
       xxs: "320px",
@@ -22,7 +39,16 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["cairo", ...defaultTheme.fontFamily.sans],
+        sans: ["jws", "TNY", ...defaultTheme.fontFamily.sans],
+      },
+      animation: {
+        wiggle: "wiggle 1s ease-in-out infinite",
+      },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
       },
     },
   },
