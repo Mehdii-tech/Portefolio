@@ -1,19 +1,25 @@
 import Head from "next/head";
 import Link from 'next/link'
 import { Menu, Transition } from "@headlessui/react";
+import Image from "next/image";
+import { Children } from "react";
 
 export default function Layout({children}:any){
     return(
       <>
-         <div className="text-[#c5cec3] h-full   top-0 bg-gradient-to-b from-black w-full z-50 xxs:space-x-3">
+         <div className="text-[#c5cec3] h-full   top-0  w-full  xxs:space-x-3">
          
 <div className="relative  ">
   <div className="z-50">
     <div className="flex justify-between lg:ml-10 lg:mr-10 z-50 pl-12 pr-12 items-center  py-8 md:justify-start md:space-x-10">
-    <nav className=" flex space-x-6 justify-start md:w-0 md:flex-1 ">
-    <div className="relative">
+    <nav className=" inline-flex  space-x-6 justify-start md:w-0 md:flex-1 ">
+      <a className=" font-medium n2 sm:text-5xl text-3xl ">JABBOUR</a>
+    
+   
+    <div className="relative pt-2 sm:pt-6">
+    
         <Menu>
-        <Menu.Button as="a" className=" group  hover:text-gray-400 cursor-pointer underline rounded-md inline-flex items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
+        <Menu.Button as="a" className=" group text-tiny sm:text-base   hover:text-gray-400 cursor-pointer underline rounded-md inline-flex items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
                          All  Projects
 
             <svg className=" ml-2 h-5 w-5 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -138,7 +144,7 @@ export default function Layout({children}:any){
 
         </div>
 
-        <Link href="/about"  ><a className="hover:text-gray-400 font-medium  ">ABOUT ME</a></Link>
+        <Link href="/about"  ><a className="hover:text-gray-400 font-medium pt-2 sm:pt-6 text-tiny sm:text-base inline-flex  ">ABOUT ME</a></Link>
         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
                   <a href="#" className=" flex items-center rounded-md text-base font-medium ">
                   
@@ -279,16 +285,16 @@ export default function Layout({children}:any){
            
         </a>
       </div> */}
-      <div className="-mr-2 -my-2 md:hidden justify-end ">
-      <Menu>
-        <Menu.Button className="inline-flex items-center justify-center p-2 rounded-md   focus:outline-none  " aria-expanded="false">
+      <div className="-mr-2 -my-2 xxs:visible md:hidden justify-end ">
+    
+        <button className="inline-flex items-center justify-center p-2 rounded-md   focus:outline-none  " aria-expanded="false">
         <span className="sr-only">Open menu</span>
         
         <svg className="flex-shrink-0 xl:h-6 lg:w-6 md:h-5 md:w-5 h-4 w-4 animate-wiggle text-[#c5cec3] " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg>
-        </Menu.Button>
-      </Menu>
+        </button>
+      
       </div>
       {/* <div className="-mr-2 -my-2 md:hidden">
         <button type="button" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
@@ -310,7 +316,8 @@ export default function Layout({children}:any){
       </div> */}
     </div>
   </div>
-
+  
+  
   {/* <!--
     Mobile menu, show/hide based on mobile menu state.
 
@@ -437,6 +444,9 @@ export default function Layout({children}:any){
 
 
 
+<div >{children}
+
+</div>
 
 
 
@@ -453,12 +463,18 @@ export default function Layout({children}:any){
 
 
 
-
-
-{children}
       
       
-      <footer className="  fixed  w-full bottom-0  pb-5  ">
+      <footer className=" fixed w-full bottom-0  pb-5  ">
+      <div className="flex relative    animate-pulse bottom-0 items-end justify-center  xs:font-light xxs:font-extralight font-normal ">
+              <div className="scroll-downs  ">
+                <div className="mousey">
+                  <div className="scroller"></div>
+                </div>
+                
+              </div><span className=" mt-16 pr-2 ">Scroll</span>
+              
+      </div>
         <div className="flex text-[#bac4b8] lg:ml-9 lg:mr-9  pl-10 pr-10 space-y-4">
             <div className="flex  items-center  space-x-4   flex-row w-full">
             <ul className="  text-left ">
@@ -473,10 +489,9 @@ export default function Layout({children}:any){
               </li>
             </ul>
 
-
             </div>
             <div className="flex items-end justify-end xs:font-light xxs:font-extralight font-normal ">
-                <span className="inline pb-1 text-xxs break-normal xxl:truncate xl:truncate lg:truncate sm:truncate ">© 2021-XXXX Jabbour, M.</span>
+                <span className="inline pb-2 text-xxs sm:text-xs break-normal xxl:truncate xl:truncate lg:truncate sm:truncate ">© 2021-XXXX Jabbour, M.</span>
             </div>
             
           </div>
