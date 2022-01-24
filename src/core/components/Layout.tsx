@@ -3,18 +3,21 @@ import Link from 'next/link'
 import { Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
 import  classnames, { Argument, Mapping }  from "classnames";
+import { useRouter } from "next/router";
 
 
 export default function Layout(props:any){
   console.log(props,props.text,props.bg, 'ee')
-  
+    
+    const router = useRouter()
+    
     return(
           
          <div className=" top-0  w-full h-full  xxs:space-x-3" >
                <style jsx global>{`
       body {
-        background-color: ${props.bg};
-        color: ${props.text};
+        background-color: ${props.bg ? props.bg : '#141414'};
+        color: ${props.text ? props.text : '#c5cec3'};
       }
     `}</style>
          
@@ -155,13 +158,15 @@ export default function Layout(props:any){
 
         <Link href="/about"  ><a className="hover:text-gray-400 font-medium pt-2 sm:pt-6 text-tiny sm:text-base inline-flex  ">ABOUT ME</a></Link>
         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                  <a href="#" className=" flex items-center rounded-md text-base font-medium ">
+          <Link href='/contact'>
+                  <a className=" flex items-center rounded-md text-base font-medium ">
                   
                     <svg className="flex-shrink-0 xl:h-6 lg:w-6 md:h-5 md:w-5 h-4 w-4 animate-wiggle " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     <span className="ml-2 hover:animate-bounce ">CONTACT ME</span>
                   </a>
+          </Link>
           </div>
         {/* <Link href="/caroussel"  ><a className="hover:text-gray-400 font-bold ">Caroussel</a></Link> */}
 
@@ -475,7 +480,7 @@ export default function Layout(props:any){
       
       
         <footer className="  w-full bottom-0  mb-15  ">
-        {!props.clicked && 
+        {!props.clicked && router.pathname==='/' && 
         <div className="flex relative    animate-pulse bottom-0 items-end justify-center  xs:font-light xxs:font-extralight font-normal ">
                 <div className="scroll-downs  ">
                   <div className="mousey border-white ">
