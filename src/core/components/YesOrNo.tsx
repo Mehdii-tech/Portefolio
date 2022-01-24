@@ -13,7 +13,7 @@ export default function Yes(props:any){
             leave-to-class="scale-95 opacity-0"
             className="mt-10"
         >
-            <span className='n0 text-2xl pt-8 flex '>
+            <span className=' n0 text-2xl pt-8 flex '>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 font-bold animate-bounce  items-center justify-center " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 11l7-7 7 7M5 19l7-7 7 7" />
                 </svg>

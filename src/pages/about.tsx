@@ -2,14 +2,14 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import className from '../classNames/Home.module.css'
-import { ThemeSwitcher } from '../core/components/Themes'
 import router, { useRouter } from 'next/router'
 import Layout from '../core/components/Layout'
+import { useState } from 'react'
 
 const About: NextPage = () => {
   return (
         <>
-        <Layout>
+       
 <div className="">
     <div className="absolute ">
     <div className="px-5 h-full my-5 flex items-center justify-center">
@@ -40,7 +40,7 @@ const About: NextPage = () => {
         
         
 </div>
-      </Layout>
+     
 
       </>
       )

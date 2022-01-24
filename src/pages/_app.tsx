@@ -1,10 +1,12 @@
 import { ThemeProvider } from "next-themes";
 import { AppProps } from "next/app";
+import Layout from "../core/components/Layout";
 import '../styles/globals.css'
+import Header from '../utils/config'
 
 const App = ({ Component, pageProps }: AppProps) => (
   <div className="h-full w-full">
-      <Component {...pageProps} />
+    <Header title={pageProps.title} /> <Component {...pageProps} />
   </div>
     
   

@@ -8,9 +8,7 @@
 html,
 body {
   user-select: none;
-  background-color: #141414;
   font-size: 14px;
-  color: #000;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -68,7 +66,7 @@ p {
 
 .swiper {
   width: 100%;
-  max-height: 725px;
+  max-height: 700px;
 }
 
 .swiper-slide {
@@ -90,13 +88,6 @@ p {
   align-items: center;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-}
 .swiper-slide {
   text-align: center;
 }
@@ -127,7 +118,7 @@ p {
   width: 3px;
   padding: 4px 9px;
   height: 34px;
-  border: 2px solid #fff;
+  border: 2px solid;
   border-radius: 25px;
   opacity: 0.5;
   box-sizing: content-box;
@@ -136,7 +127,6 @@ p {
   width: 3px;
   height: 10px;
   border-radius: 25%;
-  background-color: #fff;
   animation-name: scroll;
   animation-duration: 2.2s;
   animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
