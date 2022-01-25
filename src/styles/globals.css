@@ -66,7 +66,7 @@ p {
 
 .swiper {
   width: 100%;
-  max-height: 700px;
+  max-height: 680px;
 }
 
 .swiper-slide {
@@ -144,4 +144,8 @@ p {
     transform: translateY(13px);
     opacity: 0;
   }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #141414 !important;
 }

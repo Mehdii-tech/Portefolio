@@ -7,10 +7,10 @@ import { useRouter } from "next/router";
 
 
 export default function Layout(props:any){
-  console.log(props,props.text,props.bg, 'ee')
     
     const router = useRouter()
-    
+     console.log(props,props.text,props.bg, router.pathname,'ee')
+ 
     return(
           
          <div className=" top-0  w-full h-full  xxs:space-x-3" >
@@ -32,7 +32,7 @@ export default function Layout(props:any){
     
         <Menu>
         <Menu.Button as="a" className=" group text-tiny sm:text-base   hover:text-gray-400 cursor-pointer underline rounded-md inline-flex items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
-                         All  Projects
+                         Works
 
             <svg className=" ml-2 h-5 w-5 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -127,24 +127,26 @@ export default function Layout(props:any){
               </div>
               <div className="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                 <div className="flow-root">
-                  <a href="#" className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
-                 
+                  <Link href="">
+                  <a  className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
                     <svg className="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span className="ml-3">Watch Demo</span>
-                  </a>
+                  </a></Link>
                 </div>
 
                 <div className="flow-root">
-                  <a href="#" className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
+                  <Link href="/contact">
+                  <a  className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
                   
                     <svg className="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     <span className="ml-3">Contact Me</span>
                   </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -157,6 +159,7 @@ export default function Layout(props:any){
         </div>
 
         <Link href="/about"  ><a className="hover:text-gray-400 font-medium pt-2 sm:pt-6 text-tiny sm:text-base inline-flex  ">ABOUT ME</a></Link>
+        {router.pathname!="/contact" && 
         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
           <Link href='/contact'>
                   <a className=" flex items-center rounded-md text-base font-medium ">
@@ -167,7 +170,7 @@ export default function Layout(props:any){
                     <span className="ml-2 hover:animate-bounce ">CONTACT ME</span>
                   </a>
           </Link>
-          </div>
+          </div>}
         {/* <Link href="/caroussel"  ><a className="hover:text-gray-400 font-bold ">Caroussel</a></Link> */}
 
       {/*  <div className="relative">
@@ -479,9 +482,9 @@ export default function Layout(props:any){
 
       
       
-        <footer className="  w-full bottom-0  mb-15  ">
+        <footer className=" fixed  w-full bottom-0  mb-15  ">
         {!props.clicked && router.pathname==='/' && 
-        <div className="flex relative    animate-pulse bottom-0 items-end justify-center  xs:font-light xxs:font-extralight font-normal ">
+        <div className="flex relative  pb-4  animate-pulse bottom-0 items-end justify-center  xs:font-light xxs:font-extralight font-normal ">
                 <div className="scroll-downs  ">
                   <div className="mousey border-white ">
                     <div className="scroller bg-white"></div>

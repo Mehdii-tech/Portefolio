@@ -16,9 +16,11 @@ import SwiperCore, {
   Pagination
 } from 'swiper';
 
-import Layout from "../core/components/Layout";
+import Layout from "../core/layouts/MainLayout";
 import Yes from '../core/components/YesOrNo';
 import Content from '../core/components/Content';
+import Description from '../core/components/Description';
+import { Transition } from '@headlessui/react';
 
 
 // install Swiper modules
@@ -37,6 +39,16 @@ const Home: NextPage = () => {
     bg:'#141414'
   };
   const [{ text, bg }, setState ] = useState(initialState);
+
+  const initialWorkState ={
+    completed:'',
+    type:'',
+    role:'',
+    client:'',
+    subject:''
+  }
+
+  const [{completed, type, role, client, subject}, setStateWork]=useState(initialWorkState)
   // const [text, setText]=useState(initialtext)
   // const [bg, setBg]=useState(initialbg)
 
@@ -55,7 +67,7 @@ const Home: NextPage = () => {
   return (
     <>
 <Layout text={text} bg={bg} clicked={clicked} >
-    <Swiper speed={50}  direction={'vertical'} slidesPerView={1} spaceBetween={0} mousewheel={{sensitivity:1}}  centeredSlides={true} 
+    <Swiper speed={50}  direction={'vertical'} slidesPerView={1} spaceBetween={0} mousewheel={{sensitivity:1}}  centeredSlides={true} pagination={true}
             onSlideChange={(swiper) => slideChange(swiper.activeIndex)}  className="mySwiper">                   
             <SwiperSlide className="flex-col " >  
                       <div className=' space-x-72 justify-center items-center '>
@@ -90,7 +102,12 @@ const Home: NextPage = () => {
                         }
                         {clicked &&
                           <>
-                          <Content index={index} setState={setState} text={text}  />
+                          <div className='inline-flex justify-start   '>
+                          <Description index={index} setStateWork={setStateWork} completed={completed} type={type} role={role} client={client} subject={subject}/>
+
+                        
+                          <Content index={index} setStateWork={setStateWork} setState={setState} text={text}  />
+                          </div>
                           </>
                         }
 
@@ -104,7 +121,12 @@ const Home: NextPage = () => {
                         }
                         {clicked &&
                           <>
-                          <Content index={index} setState={setState} text={text}  />
+                                 <div className=' inline-flex justify-start   '>
+                          <Description index={index} setStateWork={setStateWork} completed={completed} type={type} role={role} client={client} subject={subject}/>
+
+                        
+                          <Content index={index} setStateWork={setStateWork} setState={setState} text={text}  />
+                          </div>
                           </>
                         }
                       </SwiperSlide>

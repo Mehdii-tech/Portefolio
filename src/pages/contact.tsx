@@ -1,65 +1,40 @@
 import { NextPage } from "next";
-import Layout from "../core/components/Layout";
+import Layout from "../core/layouts/MainLayout";
+import FormContact from "../core/components/Contact";
 
 
 const Contact:NextPage=()=>{
 
     return(
         <Layout>
-            <div className="container mx-auto px-4 ">
-                <form className="w-full max-w-lg ">
-                <div className="flex flex-wrap -mx-3 mb-6">
-                    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label className="block uppercase tracking-wide  text-xs font-bold mb-2" htmlFor="grid-first-name">
-                        First Name
-                    </label>
-                    <input className="appearance-none block w-full bg-gray-200  border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane"></input>
-                    <p className="text-red-500 text-xs italic">Please fill out this field.</p>
+            <div className="flex-col mx-auto text-center">
+                    <div className=' space-x-32 justify-center items-center '>
+                        <span className='n0 text-7xl'>C</span>
+                        <span className='n0 text-7xl'>O</span>
+                        <span className='n0 text-7xl'>N</span>
+                        <span className='n0 text-7xl'>T</span>
+                        <span className='n0 text-7xl'>A</span>
+                        <span className='n0 text-7xl'>C</span>
+                        <span className='n0 text-7xl'>T</span>
+                        <br/>
+                        <span className='n0 text-7xl'>M</span>
+                        <span className='n0 text-7xl'>E</span>
                     </div>
-                    <div className="w-full md:w-1/2 px-3">
-                    <label className="block uppercase tracking-wide  text-xs font-bold mb-2" htmlFor="grid-last-name">
-                        Last Name
-                    </label>
-                    <input className="appearance-none block w-full bg-gray-200  border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe"></input>
-                    </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-6">
-                    <div className="w-full px-3">
-                    <label className="block uppercase tracking-wide  text-xs font-bold mb-2" htmlFor="grid-password">
-                        E-mail
-                    </label>
-                    <input className="appearance-none block w-full bg-gray-200  border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email"></input>
-                    <p className="text-gray-600 text-xs italic">Some tips - as long as needed</p>
-                    </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-6">
-                    <div className="w-full px-3">
-                    <label className="block uppercase tracking-wide  text-xs font-bold mb-2" htmlFor="grid-company">
-                        Company
-                    </label>
-                    <input className="appearance-none block w-full bg-gray-200  border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-company" type="text"></input>
-                    <p className="text-gray-600 text-xs italic">Some tips - as long as needed</p>
-                    </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-6">
-                    <div className="w-full px-3">
-                    <label className="block uppercase tracking-wide  text-xs font-bold mb-2" htmlFor="grid-password">
-                        Message
-                    </label>
-                    <textarea className=" no-resize appearance-none block w-full bg-gray-200  border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48" id="message"></textarea>
-                    <p className="text-gray-600 text-xs italic">Re-size can be disabled by set by resize-none / resize-y / resize-x / resize</p>
-                    </div>
-                </div>
-                <div className="md:flex md:items-center">
-                    <div className="md:w-1/3">
-                    <button className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-                        Send
-                    </button>
-                    </div>
-                    <div className="md:w-2/3"></div>
-                </div>
-                </form>
-            </div>
+                    {/* <div className=' space-x-32 justify-center items-center '>
+                        <span className='n1 text-8xl'>W</span>
+                        <span className='n1 text-8xl'>H</span>
+                        <span className='n1 text-8xl'>A</span>
+                        <span className='n1 text-8xl'>T</span>
+                        <span className='n1 text-8xl'>Y</span>
+                        <span className='n1 text-8xl'>O</span>
+                        <span className='n1 text-8xl'>U</span>
+                        <span className='n1 text-8xl'>W</span>
+                        <span className='n1 text-8xl'>A</span>
+                        <span className='n1 text-8xl'>N</span>
+                        <span className='n1 text-8xl'>T</span>
+                </div> */}
+            </div>          
+            <FormContact />
         </Layout>
     )
 }

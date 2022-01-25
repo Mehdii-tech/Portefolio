@@ -5,7 +5,7 @@ export default function Content({setState, text, index}:any){
     useEffect(()=>{ 
     switch (index) {
         case 1:{
-            setState({text:'#ff7f00',bg:'#fffafa'}) 
+            setState({text:'#ff7f00',bg:'#fffafa'})
         }
         break;
         case 2:{
@@ -18,9 +18,9 @@ export default function Content({setState, text, index}:any){
     return(
         <>
             {index===1 &&
-            <div className=" relative w-max h-max ">
+            <div className=" relative w-max  h-max ">
                 <img className="  filter w-[800px] h-[500px]  " src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                <div className={` text-[${text}] flex-col absolute inset-0 z-10 justify-start items-start`}>
+                <div className={` text-[${text}] flex-col absolute text-center inset-0 z-10 justify-start items-start`}>
                         <div className=' space-x-72 justify-center items-center '>
                     <span className='n1 text-8xl'>O</span>
                     <span className='n1 text-8xl'>C</span>
@@ -43,7 +43,7 @@ export default function Content({setState, text, index}:any){
             }
             {index===2 &&
             <div className=" relative w-max h-max ">
-            <img className="  filter w-[800px] h-[500px]  " src="https://swiperjs.com/demos/images/nature-3.jpg" />
+            <img className=" justify-center items-center text-center filter w-[800px] h-[500px]  " src="https://swiperjs.com/demos/images/nature-3.jpg" />
             <div className={` text-[${text}] flex-col absolute inset-0 z-10 justify-start items-start`}>
                     <div className=' space-x-52 justify-center items-center '>
                 <span className='n1 text-8xl'>A</span>
