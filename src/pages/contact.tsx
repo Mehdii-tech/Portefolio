@@ -16,9 +16,6 @@ const Contact:NextPage=()=>{
                         <span className='n0 text-7xl'>A</span>
                         <span className='n0 text-7xl'>C</span>
                         <span className='n0 text-7xl'>T</span>
-                        <br/>
-                        <span className='n0 text-7xl'>M</span>
-                        <span className='n0 text-7xl'>E</span>
                     </div>
                     {/* <div className=' space-x-32 justify-center items-center '>
                         <span className='n1 text-8xl'>W</span>
