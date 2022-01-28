@@ -8,6 +8,7 @@ const About: NextPage = () => {
   return (
         <>
       <Layout>
+        
 <div className="">
     <div className="absolute ">
     <div className="px-5 h-full my-5 flex items-center justify-center">

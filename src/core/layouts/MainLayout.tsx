@@ -25,7 +25,7 @@ export default function Layout(props:any){
   <div className="z-50">
     <div className="flex justify-between lg:ml-10 lg:mr-10 z-50 pl-12 pr-12 items-center  py-8 md:justify-start md:space-x-10">
     <nav className=" inline-flex  space-x-6 justify-start md:w-0 md:flex-1 ">
-      <a className=" font-medium n2 sm:text-5xl text-3xl ">JABBOUR</a>
+      <Link href="/"><a className=" cursor-pointer font-medium n2 sm:text-5xl text-3xl ">JABBOUR</a></Link>
     
    
     <div className="relative pt-2 sm:pt-6">
@@ -127,7 +127,7 @@ export default function Layout(props:any){
               </div>
               <div className="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                 <div className="flow-root">
-                  <Link href="">
+                  <Link href="/">
                   <a  className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
                     <svg className="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
@@ -484,13 +484,15 @@ export default function Layout(props:any){
       
         <footer className=" fixed  w-full bottom-0  mb-15  ">
         {!props.clicked && router.pathname==='/' && 
-        <div className="flex relative  pb-4  animate-pulse bottom-0 items-end justify-center  xs:font-light xxs:font-extralight font-normal ">
+        
+        <div className="flex relative  pb-4  animate-pulse bottom-0 items-end justify-center space-y-2  xs:font-light xxs:font-extralight font-normal "><span className=" mt-16 pr-2 ">Scroll</span> 
                 <div className="scroll-downs  ">
                   <div className="mousey border-white ">
                     <div className="scroller bg-white"></div>
                   </div>
                   
-                </div><span className=" mt-16 pr-2 ">Scroll</span>
+                </div>
+                
                 
         </div>}
         {props.clicked &&
@@ -501,7 +503,7 @@ export default function Layout(props:any){
         }
           <div className="flex lg:ml-9 lg:mr-9   pl-10 pr-10 ">
               <div className="flex items-center  space-x-4   flex-row w-full">
-              <ul className="  text-left ">
+                <ul className="  text-left ">
                 <li className="">
                 <a className=" inline-flex" href="mailto:mehdi.jabbour@gmail.com"><span className=" tracking-wider text-xs font-medium pt-1 ">EMAIL</span></a> 
                 </li>
@@ -512,6 +514,8 @@ export default function Layout(props:any){
                 <a className=" inline-flex" href="https://github.com/Mehdi-githu"><span className=" pt-1 tracking-wide text-xs font-medium">GITHUB</span></a>  
                 </li>
               </ul>
+                
+
 
               </div>
               <div className="flex items-end justify-end xs:font-light xxs:font-extralight font-normal ">

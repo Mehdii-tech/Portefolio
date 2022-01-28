@@ -1,4 +1,4 @@
-import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser'
 import { useEffect, useRef, useState } from "react"
 import { useForm } from 'react-hook-form'
 import Joi, { options, required } from 'joi'
