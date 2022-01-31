@@ -14,6 +14,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/core/components/earth/index.tsx","src/core/components/topSection/index.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/core/components/text/text.tsx"],
   "exclude": ["node_modules"]
 }

@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
+
 #app {
   height: 100%;
 }
@@ -36,6 +38,11 @@ body {
   font-family: "TNY";
   src: url("./fonts/Superset\ Italic.ttf") format("truetype");
   font-style: italic;
+}
+
+.n4 {
+  font-family: "first";
+  font-style: normal;
 }
 
 .n1 {
@@ -148,4 +155,78 @@ p {
 
 .swiper-pagination-bullet-active {
   background-color: #141414 !important;
+}
+
+.perspective-text {
+  font-family: Arial;
+  font-size: 58px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.perspective-line {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+p {
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
+  transition: all 0.5s ease-in-out;
+}
+
+.perspective-line:nth-child(odd) {
+  transform: skew(60deg, -30deg) scaleY(0.667);
+}
+
+.perspective-line:nth-child(even) {
+  transform: skew(0deg, -30deg) scaleY(1.337);
+}
+
+.perspective-text:hover p {
+  transform: translate(0, -50px);
+}
+
+.perspective-line:nth-child(1) {
+  left: 29px;
+}
+
+.perspective-line:nth-child(2) {
+  left: 58px;
+  background: #65635e;
+}
+
+.perspective-line:nth-child(3) {
+  left: 87px;
+  background: #c38b71;
+}
+
+.perspective-line:nth-child(4) {
+  left: 116px;
+  background: #374151;
+}
+
+.perspective-line:nth-child(5) {
+  left: 145px;
+}
+
+.waviy {
+  position: relative;
+}
+.waviy span {
+  position: relative;
+  display: inline-block;
+
+  text-transform: uppercase;
+  animation: flip 5s infinite;
+  animation-delay: calc(1s * var(--i));
+}
+@keyframes flip {
+  0%,
+  80% {
+    transform: rotateX(360deg);
+  }
 }

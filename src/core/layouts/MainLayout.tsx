@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 export default function Layout(props:any){
     
     const router = useRouter()
-     console.log(props,props.text,props.bg, router.pathname,'ee')
+     console.log(props,props.text,props.bg, router.pathname,props.swiper, 'ee')
  
     return(
           
@@ -25,13 +25,16 @@ export default function Layout(props:any){
   <div className="z-50">
     <div className="flex justify-between lg:ml-10 lg:mr-10 z-50 pl-12 pr-12 items-center  py-8 md:justify-start md:space-x-10">
     <nav className=" inline-flex  space-x-6 justify-start md:w-0 md:flex-1 ">
-      <Link href="/"><a className=" cursor-pointer font-medium n2 sm:text-5xl text-3xl ">JABBOUR</a></Link>
+      <Link  href="/"><a  className=" cursor-pointer font-medium n2 sm:text-5xl text-4xl ">JABBOUR</a></Link>
     
    
-    <div className="relative pt-2 sm:pt-6">
-    
+    <div className="relative pt-4 sm:pt-6">
+        <Link  href="/">
+        <a className=" sm:hidden group text-tiny sm:text-base hidden  hover:text-gray-400 cursor-pointer  rounded-md xxs:inline-flex items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
+          Works
+        </a></Link>
         <Menu>
-        <Menu.Button as="a" className=" group text-tiny sm:text-base   hover:text-gray-400 cursor-pointer underline rounded-md inline-flex items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
+        <Menu.Button as="a" className=" hidden sm:inline-flex group text-tiny sm:text-base   hover:text-gray-400 cursor-pointer underline rounded-md  items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
                          Works
 
             <svg className=" ml-2 h-5 w-5 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -133,7 +136,7 @@ export default function Layout(props:any){
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="ml-3">Watch Demo</span>
+                    <span className="ml-3">Watch Demos</span>
                   </a></Link>
                 </div>
 
@@ -158,7 +161,7 @@ export default function Layout(props:any){
 
         </div>
 
-        <Link href="/about"  ><a className="hover:text-gray-400 font-medium pt-2 sm:pt-6 text-tiny sm:text-base inline-flex  ">ABOUT ME</a></Link>
+        <Link href="/about"  ><a className=" sm:inline-flex hidden hover:text-gray-400 font-medium pt-2 sm:pt-6 text-tiny sm:text-base  ">ABOUT ME</a></Link>
         {router.pathname!="/contact" && 
         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
           <Link href='/contact'>
@@ -303,15 +306,15 @@ export default function Layout(props:any){
         </a>
       </div> */}
       <div className="-mr-2 -my-2 xxs:visible md:hidden justify-end ">
-    
-        <button className="inline-flex items-center justify-center p-2 rounded-md   focus:outline-none  " aria-expanded="false">
+      <Link href='/contact'>
+        <a className="inline-flex items-center justify-center p-2 rounded-md   focus:outline-none  " aria-expanded="false">
         <span className="sr-only">Open menu</span>
         
         <svg className="flex-shrink-0 xl:h-6 lg:w-6 md:h-5 md:w-5 h-4 w-4 animate-wiggle text-[#c5cec3] " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg>
-        </button>
-      
+        </a>
+      </Link>
       </div>
       {/* <div className="-mr-2 -my-2 md:hidden">
         <button type="button" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
@@ -460,7 +463,6 @@ export default function Layout(props:any){
 </div>
 
 
-
 <div >{props.children}
 
 </div>
@@ -483,24 +485,30 @@ export default function Layout(props:any){
       
       
         <footer className=" fixed  w-full bottom-0  mb-15  ">
-        {!props.clicked && router.pathname==='/' && 
         
-        <div className="flex relative  pb-4  animate-pulse bottom-0 items-end justify-center space-y-2  xs:font-light xxs:font-extralight font-normal "><span className=" mt-16 pr-2 ">Scroll</span> 
+        <Transition
+        enter="transform transition duration-[400ms]"
+        enterFrom="opacity-0 scale-0 "
+        enterTo="opacity-100 rotate-0 scale-125 "
+        leave="transform  transition ease-in-out"
+        leaveFrom="opacity-100 rotate-0 scale-100 "
+        leaveTo="opacity-0 scale-95 "
+          show={!props.clicked && router.pathname==='/'}
+          className={"flex relative  pb-4  animate-pulse bottom-0 items-end justify-center space-y-2  xs:font-light xxs:font-extralight font-normal "}
+        >
+        
+          <span className=" mt-16 pr-2 ">Scroll</span> 
                 <div className="scroll-downs  ">
                   <div className="mousey border-white ">
                     <div className="scroller bg-white"></div>
                   </div>
                   
                 </div>
-                
-                
-        </div>}
-        {props.clicked &&
-          <div>
-            
-          </div>
 
-        }
+              
+        </Transition>
+     
+
           <div className="flex lg:ml-9 lg:mr-9   pl-10 pr-10 ">
               <div className="flex items-center  space-x-4   flex-row w-full">
                 <ul className="  text-left ">
@@ -514,17 +522,12 @@ export default function Layout(props:any){
                 <a className=" inline-flex" href="https://github.com/Mehdi-githu"><span className=" pt-1 tracking-wide text-xs font-medium">GITHUB</span></a>  
                 </li>
               </ul>
-                
-
-
               </div>
               <div className="flex items-end justify-end xs:font-light xxs:font-extralight font-normal ">
                   <span className="inline pb-2 text-xxs sm:text-xs break-normal xxl:truncate xl:truncate lg:truncate sm:truncate ">© 2021-XXXX Jabbour, M.</span>
               </div>
               
             </div>
-              
-          
 
           
           </footer>
