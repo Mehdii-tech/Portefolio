@@ -24,7 +24,7 @@ export default function Content({setState, text, index, photo, demo}:any){
         <>
            
             
-            <div className=" relative w-max  h-max ">
+            <div className=" relative  w-max  h-max ">
                 
 
                 
@@ -42,8 +42,9 @@ export default function Content({setState, text, index, photo, demo}:any){
                     alt="loginpage"
                     width={800}
                     height={500}
-                    className=" filter object-cover rounded-lg  cursor-pointer "
+                    className="  filter object-cover rounded-lg  cursor-pointer "
                     priority={true}
+                    quality={100}
                 />
                 </Transition>
                 <Transition
@@ -62,8 +63,8 @@ export default function Content({setState, text, index, photo, demo}:any){
                     width={800}
                     height={500}
                     className=" filter object-cover rounded-lg"
-                    // onMouseOut={()=>setActive(false)}
                     priority={true}
+                    quality={100}
                 /> 
                 </Transition>
                 

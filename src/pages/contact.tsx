@@ -8,14 +8,14 @@ const Contact:NextPage=()=>{
     return(
         <Layout>
             <div className="flex-col mx-auto text-center">
-                    <div className=' space-x-32 justify-center items-center '>
-                        <span className='n0 text-7xl'>C</span>
-                        <span className='n0 text-7xl'>O</span>
-                        <span className='n0 text-7xl'>N</span>
-                        <span className='n0 text-7xl'>T</span>
-                        <span className='n0 text-7xl'>A</span>
-                        <span className='n0 text-7xl'>C</span>
-                        <span className='n0 text-7xl'>T</span>
+                    <div className=' n0 text-5xl xs:text-6xl lg:text-7xl xs:space-x-10 lg:space-x-32 justify-center items-center '>
+                        <span >C</span>
+                        <span >O</span>
+                        <span >N</span>
+                        <span >T</span>
+                        <span >A</span>
+                        <span >C</span>
+                        <span >T</span>
                     </div>
                     {/* <div className=' space-x-32 justify-center items-center '>
                         <span className='n1 text-8xl'>W</span>

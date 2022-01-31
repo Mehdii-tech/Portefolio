@@ -22,6 +22,7 @@ import Content from '../core/components/Content';
 import Description from '../core/components/Description';
 import { Transition } from '@headlessui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 // install Swiper modules
@@ -74,34 +75,34 @@ const Home: NextPage = () => {
 <Layout index={index} text={text} bg={bg} clicked={clicked}  >
     <Swiper speed={50}  direction={'vertical'} slidesPerView={1} spaceBetween={0} mousewheel={{sensitivity:1}}  centeredSlides={true} pagination={true}
             onSlideChange={(swiper) => slideChange(swiper.activeIndex)}   className="mySwiper"  >                   
-            <SwiperSlide className=" flex-col waviy " >  
-                      <div className='  space-x-36 justify-center items-center '>
-                        <span className='n1 text-8xl'>W</span>
-                        <span className='n1 text-8xl'>E</span>
-                        <span className='n1 text-8xl'>L</span>
-                        <span className='n1 text-8xl'>C</span>
-                        <span className='n1 text-8xl'>O</span>
-                        <span className='n1 text-8xl'>M</span>
-                        <span className='n1 text-8xl'>E</span>
+            <SwiperSlide className="  flex-col waviy " >  
+                      <div className=' n1 xs:text-7xl lg:text-8xl lg:space-x-36 text-6xl space-x-8 xs:space-x-11 justify-center items-center '>
+                        <span>W</span>
+                        <span>E</span>
+                        <span >L</span>
+                        <span >C</span>
+                        <span >O</span>
+                        <span >M</span>
+                        <span >E</span>
                       </div>
-                      <div className=' space-x-32 justify-center items-center '>
-                        <span className='n1 text-8xl'>T</span>
-                        <span className='n1 text-8xl'>O</span>
-                        <span className='n1 text-8xl'></span>
-                        <span className='n1 text-8xl'>M</span>
-                        <span className='n1 text-8xl'>Y</span>
+                      <div className=' n1 xs:text-7xl lg:text-8xl lg:space-x-36 text-6xl space-x-8 xs:space-x-11 justify-center items-center '>
+                        <span >T</span>
+                        <span >O</span>
+                        <span ></span>
+                        <span >M</span>
+                        <span >Y</span>
 
                       </div>
-                      <div className='space-x-6  justify-center items-center '>
-                      <span className='n1 text-5xl'>P</span>
-                        <span className='n1 text-5xl'>O</span>
-                        <span className='n1 text-5xl'>R</span>
-                        <span className='n1 text-5xl'>T</span>
-                        <span className='n1 text-5xl'>F</span>
-                        <span className='n1 text-5xl'>O</span>
-                        <span className='n1 text-5xl'>L</span>
-                        <span className='n1 text-5xl'>I</span>
-                        <span className='n1 text-5xl'>O</span>
+                      <div className=' n1 lg:text-5xl text-4xl space-x-6  justify-center items-center '>
+                      <span >P</span>
+                        <span >O</span>
+                        <span >R</span>
+                        <span >T</span>
+                        <span >F</span>
+                        <span >O</span>
+                        <span >L</span>
+                        <span >I</span>
+                        <span >O</span>
                       </div>
                       		
                       </SwiperSlide>
@@ -163,9 +164,10 @@ const Home: NextPage = () => {
                           </>
                         }
                       </SwiperSlide>
-                      <SwiperSlide className='flex-col '>
-                        <img className="filter grayscale hover:grayscale-0 block w-[200px] h-[200px] object-cover rounded-lg "  src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                        <Yes isShown={isShown} />
+                      <SwiperSlide className='flex-col hover:smoky '>
+                      <span className='n0 text-2xl smoky '>It was my biggest works</span>
+                      <div className='inline-flex space-x-4 n0 text-2xl ' ><span className=' '>Want to see<Link href='/contact'><span className='n0 text-2xl hover:underline '> More </span></Link>?</span></div>
+                      <p className='n1 text-5xl mt-16 '>OR</p>
                       </SwiperSlide>
         </Swiper>
   </Layout>

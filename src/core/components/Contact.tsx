@@ -81,8 +81,8 @@ export default function FormContact(){
     
     return(
       <div className=" container mx-auto px-4  ">
-      <form onSubmit={handleSubmit(sendEmail)} className=" w-full max-w-lg  ">
-      <div className="flex flex-wrap justify-center -mx-3 mb-6">
+      <form onSubmit={handleSubmit(sendEmail)} className=" w-full max-w-lg  space-y-3 ">
+      <div className="flex flex-wrap justify-center -mx-3 ">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label className="block uppercase tracking-wide  text-xs font-bold mb-2" htmlFor="grid-name">
               Name
@@ -98,7 +98,7 @@ export default function FormContact(){
           <p className="text-red-500 text-xs italic">Please fill out this field.</p>
           </div> */}
       </div>
-      <div className="flex flex-wrap justify-center -mx-3 mb-6">
+      <div className="flex flex-wrap justify-center -mx-3 ">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label className="block uppercase tracking-wide  text-xs font-bold mb-2" htmlFor="grid-password">
               E-mail
@@ -108,7 +108,7 @@ export default function FormContact(){
           </div>
 
       </div>
-      <div className="flex flex-wrap justify-center -mx-3 mb-6">
+      <div className="flex flex-wrap justify-center -mx-3 ">
       <div className="w-full  md:w-1/2 px-3">
           <label className="block uppercase tracking-wide  text-xs font-bold mb-2" htmlFor="grid-company">
               Company
@@ -117,8 +117,8 @@ export default function FormContact(){
           {/* <p className="text-gray-600 text-xs italic">Some tips - as long as needed</p> */}
           </div>
       </div>
-      <div className="flex flex-wrap justify-center -mx-3 mb-6">
-          <div className="w-1/2 px-3">
+      <div className="flex flex-wrap justify-center -mx-3 ">
+          <div className="w-full md:w-1/2 px-3">
           <label className="block uppercase tracking-wide  text-xs font-bold mb-2" htmlFor="grid-password">
               Message
           </label>
@@ -127,16 +127,17 @@ export default function FormContact(){
           {errors.message?.message && <p className=" text-red-500 text-xs italic ">{errors.message?.message}</p>}
           </div>
       </div>
-      <div className="flex flex-wrap justify-center -mx-3 mb-6">
-          <div className="w-1/2 px-3">            
+      <div className="flex flex-wrap justify-center -mx-3 ">
+          <div className=" w-full md:w-1/2 px-3">            
           <ReCAPTCHA
               sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
               onChange={successCallback}
+              className='block w-full '
             /> 
             </div>
       </div>
-      <div className="md:flex flex-wrap md:justify-center md:items-center">
-          <div className="md:w-1/2 px-2 ">      
+      <div className="flex flex-wrap justify-center -mx-3 ">
+          <div className=" w-full md:w-1/2 px-3 ">      
 
           <button disabled={!captchaResponse} className="shadow bg-gray-500 cursor-pointer hover:bg-gray-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300" type="submit">
               Send
