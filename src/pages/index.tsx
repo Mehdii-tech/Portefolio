@@ -13,7 +13,7 @@ import "swiper/css/pagination"
 // import Swiper core and required modules
 import SwiperCore, {
   Mousewheel,
-  Pagination
+  Pagination,
 } from 'swiper';
 
 import Layout from "../core/layouts/MainLayout";
