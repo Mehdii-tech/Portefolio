@@ -29,12 +29,18 @@ export default function Layout(props:any){
     
    
     <div className="relative pt-4 sm:pt-6">
+      <div className="space-x-6 ">
         <Link  href="/">
         <a className=" sm:hidden group text-tiny sm:text-base hidden  hover:text-gray-400 cursor-pointer  rounded-md xxs:inline-flex items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
           Works
         </a></Link>
+        <Link  href="/about">
+        <a className=" sm:hidden group text-tiny sm:text-base hidden  hover:text-gray-400 cursor-pointer  rounded-md xxs:inline-flex items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
+          ABOUT ME
+        </a></Link>
+      </div>
         <Menu>
-        <Menu.Button as="a" className="  inline-flex group text-tiny sm:text-base   hover:text-gray-400 cursor-pointer underline rounded-md  items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
+        <Menu.Button as="a" className=" hidden  sm:inline-flex group text-tiny sm:text-base   hover:text-gray-400 cursor-pointer underline rounded-md  items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
                          Works
 
             <svg className=" ml-2 h-5 w-5 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -52,7 +58,7 @@ export default function Layout(props:any){
             <Menu.Items as="div">
           <div className="absolute z-10 -ml-4 mt-3 transform px-2  sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
             <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-              <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+              <div className="relative  grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                 <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                  
                   <svg className="flex-shrink-0 h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -305,7 +311,7 @@ export default function Layout(props:any){
            
         </a>
       </div> */}
-      <div className="-mr-2 -my-2 xxs:visible md:hidden justify-end ">
+      <div className=" -mr-2 -my-2  md:hidden  justify-end ">
       <Link href='/contact'>
         <a className="inline-flex items-center justify-center p-2 rounded-md   focus:outline-none  " aria-expanded="false">
         <span className="sr-only">Open menu</span>
@@ -316,15 +322,50 @@ export default function Layout(props:any){
         </a>
       </Link>
       </div>
-      {/* <div className="-mr-2 -my-2 md:hidden">
-        <button type="button" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+      <div className="-mr-2 -my-2 xs:hidden ">
+        <Menu>
+        <Menu.Button as="a"> 
+        <a className={` rounded-md p-2 inline-flex items-center justify-center text-[${props.text}] hover:text-gray-500  focus:outline-none `} aria-expanded="false">
           <span className="sr-only">Open menu</span>
         
           <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-        </button>
-      </div> */}
+        </a>
+        </Menu.Button>
+        <Menu.Items as="div">
+        <div className="absolute z-10 -ml-4 mt-3 transform px-2  sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+              <div className="relative  grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                <Link href="/">
+                  <a  className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
+                    <svg className="flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="ml-3">Watch Demos</span>
+                  </a>
+                </Link>
+                <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                 
+                  <svg className="flex-shrink-0 h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                  <div className="ml-4">
+                    <p className="text-base font-medium text-gray-900">
+                      Contact me
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </Menu.Items>
+
+        </Menu>
+
+      </div> 
 
       {/* <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
         <a href="#" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">

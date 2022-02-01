@@ -171,7 +171,7 @@ p {
   position: relative;
 }
 
-p {
+.p {
   margin: 0;
   height: 50px;
   line-height: 50px;
@@ -186,7 +186,7 @@ p {
   transform: skew(0deg, -30deg) scaleY(1.337);
 }
 
-.perspective-text:hover p {
+.perspective-text:hover .p {
   transform: translate(0, -50px);
 }
 

@@ -20,7 +20,6 @@ import Layout from "../core/layouts/MainLayout";
 import Yes from '../core/components/YesOrNo';
 import Content from '../core/components/Content';
 import Description from '../core/components/Description';
-import { Transition } from '@headlessui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -164,7 +163,7 @@ const Home: NextPage = () => {
                           </>
                         }
                       </SwiperSlide>
-                      <SwiperSlide className='flex-col hover:smoky '>
+                      <SwiperSlide className='flex-col smoky '>
                       <span className='n0 text-2xl smoky '>It was my biggest works</span>
                       <div className='inline-flex space-x-4 n0 text-2xl ' ><span className=' '>Want to see<Link href='/contact'><span className='n0 text-2xl hover:underline '> More </span></Link>?</span></div>
                       <p className='n1 text-5xl mt-16 '>OR</p>

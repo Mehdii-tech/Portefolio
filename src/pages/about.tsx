@@ -10,24 +10,24 @@ const About: NextPage = () => {
       <Layout>
         <div className=" flex mx-auto space-x-6 xl:space-x-48 ">
           <div className=' ml-auto  justify-center items-center mb-10  hidden lg:flex '>
-            <div className="perspective-text">
-              <div className="perspective-line">
+            <div className="p perspective-text">
+              <div className="p perspective-line">
                 <p></p>
-                <p>Patience</p>
+                {/* <p>Patience</p> */}
               </div>
-              <div className="perspective-line">
+              <div className="p perspective-line">
                 <p>Patience</p>
                 <p>Is The</p>
               </div>
-              <div className="perspective-line">
+              <div className="p perspective-line">
                 <p>Is The</p>
                 <p>Greatest</p>
               </div>
-              <div className="perspective-line">
+              <div className="p perspective-line">
                 <p>Greatest</p>
                 <p>Virtue</p>
               </div>
-              <div className="perspective-line">
+              <div className="p perspective-line">
                 <p>Virtue</p>
                 <p></p>
               </div>
