@@ -231,9 +231,6 @@ p {
   }
 }
 
-
-
-
 .smoky span {
   display: inline-block;
   text-shadow: 0 0 0 whitesmoke;
@@ -245,22 +242,24 @@ p {
 @keyframes smoky {
   60% {
     text-shadow: 0 0 40px whitesmoke;
- }
+  }
   to {
-    transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg) scale(1.5);
+    transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg)
+      scale(1.5);
     text-shadow: 0 0 20px whitesmoke;
     opacity: 0;
- }
+  }
 }
 @keyframes smoky-mirror {
   60% {
     text-shadow: 0 0 40px whitesmoke;
- }
+  }
   to {
-    transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg) scale(2);
+    transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg)
+      scale(2);
     text-shadow: 0 0 20px whitesmoke;
     opacity: 0;
- }
+  }
 }
 span:nth-of-type(1) {
   animation-delay: 3.1s;
@@ -324,4 +323,34 @@ span:nth-of-type(20) {
 }
 span:nth-of-type(21) {
   animation-delay: 5.1s;
+}
+
+.pic-wrap {
+  width: 100%;
+  position: relative;
+}
+@media (min-width: 475px) {
+  .pic-wrap {
+    width: 300px;
+  }
+}
+@media (min-width: 1280px) {
+  .pic-wrap {
+    width: 1050px;
+  }
+}
+@media (min-width: 1440px) {
+  .pic-wrap {
+    width: 3000px;
+  }
+}
+@media (min-width: 1024px) {
+  .pic-wrap {
+    width: 600px;
+  }
+}
+@media (min-width: 768px) {
+  .pic-wrap {
+    width: 400px;
+  }
 }

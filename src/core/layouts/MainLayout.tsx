@@ -29,13 +29,13 @@ export default function Layout(props:any){
     
    
     <div className="relative pt-4 sm:pt-6">
-      <div className="space-x-6 ">
+      <div className=" hidden xs:inline-flex sm:hidden  space-x-6 ">
         <Link  href="/">
-        <a className=" sm:hidden group text-tiny sm:text-base hidden  hover:text-gray-400 cursor-pointer  rounded-md xxs:inline-flex items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
+        <a className="  group text-tiny sm:text-base  hover:text-gray-400 cursor-pointer  rounded-md  items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
           Works
         </a></Link>
         <Link  href="/about">
-        <a className=" sm:hidden group text-tiny sm:text-base hidden  hover:text-gray-400 cursor-pointer  rounded-md xxs:inline-flex items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
+        <a className="  group text-tiny sm:text-base   hover:text-gray-400 cursor-pointer  rounded-md  items-center  focus:outline-none font-bold  xs:font-normal xxs:font-light " aria-expanded="false" >
           ABOUT ME
         </a></Link>
       </div>
@@ -311,7 +311,7 @@ export default function Layout(props:any){
            
         </a>
       </div> */}
-      <div className=" -mr-2 -my-2  md:hidden  justify-end ">
+      <div className=" -mr-2 -my-2  md:hidden hidden xs:block justify-end ">
       <Link href='/contact'>
         <a className="inline-flex items-center justify-center p-2 rounded-md   focus:outline-none  " aria-expanded="false">
         <span className="sr-only">Open menu</span>
@@ -324,39 +324,55 @@ export default function Layout(props:any){
       </div>
       <div className="-mr-2 -my-2 xs:hidden ">
         <Menu>
-        <Menu.Button as="a"> 
-        <a className={` rounded-md p-2 inline-flex items-center justify-center text-[${props.text}] hover:text-gray-500  focus:outline-none `} aria-expanded="false">
+        <Menu.Button as="a" className={` rounded-md p-2 inline-flex items-center justify-center text-[${props.text}]  focus:outline-none `} aria-expanded="false" > 
           <span className="sr-only">Open menu</span>
         
           <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-        </a>
+        
         </Menu.Button>
         <Menu.Items as="div">
-        <div className="absolute z-10 -ml-4 mt-3 transform px-2  sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+        <div className="absolute right-0 z-5 -ml-4 mt-3 transform px-2  sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
             <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
               <div className="relative  grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                 <Link href="/">
-                  <a  className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
+                  <a  className="-m-3 p-3 flex items-start rounded-lg text-base font-medium text-gray-900 hover:bg-gray-100">
                     <svg className="flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="ml-3">Watch Demos</span>
+                    <div className="ml-2">
+                    <span className="text-base font-medium">Watch Demos</span>
+                    </div>
                   </a>
                 </Link>
-                <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                <Link href="/about">
+                <a  className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 text-gray-900 ">
                  
-                  <svg className="flex-shrink-0 h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                <svg className="flex-shrink-0 h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  <div className="ml-4">
-                    <p className="text-base font-medium text-gray-900">
+                 <div className="ml-2">
+                   <span className="text-base font-medium ">
+                     About me
+                   </span>
+                 </div>
+               </a>
+               </Link>
+               <Link href="/contact">
+                <a  className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 text-gray-900 ">
+                 
+                <svg className=" flex-shrink-0  h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  <div className="ml-2">
+                    <span className="text-base font-medium ">
                       Contact me
-                    </p>
+                    </span>
                   </div>
                 </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -542,8 +558,8 @@ export default function Layout(props:any){
           
               {props.index != 3 ?
                               <><span className=" mt-16  pr-2 ">Scroll</span><div className="scroll-downs  ">
-                <div className="mousey border-white ">
-                  <div className="scroller bg-white"></div>
+                <div className="mousey border-white fixed ">
+                  <div className="scroller  bg-white"></div>
                 </div>
 
               </div></> : 

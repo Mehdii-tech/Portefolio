@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react"
 import Image from "next/image";
 import { Transition } from "@headlessui/react";
-
-export default function Content({setState, text, index, photo, demo}:any){
+import school from '../../../public/assets/img/1/school.jpg'
+import help from '../../../public/assets/img/1/help.jpg'
+import demo1 from '../../../public/assets/img/1/demo1.gif'
+import demo2 from '../../../public/assets/img/1/demo2.gif'
+export default function Content({setState, text, index}:any){
     
     const [active, setActive] = useState(false);
       
@@ -10,21 +13,21 @@ export default function Content({setState, text, index, photo, demo}:any){
     useEffect(()=>{ 
     switch (index) {
         case 1:{
-            setState({text:'#53bc48',bg:'#65635e', photo:"school.jpg", demo:"demo.gif"})
+            setState({text:'#53bc48',bg:'#5e7091'})
         }
         break;
         case 2:{
-            setState({text:'#2d60a8',bg:'#c38b71', photo:"help.jpg", demo:"demo2.gif"}) 
+            setState({text:'#2d60a8',bg:'#c38b71'}) 
         }
         break;
     }
     },[setState])
     console.log( text, index,'text')
     return(
-        <>
+        <>   
            
             
-            <div className=" relative  w-max  h-max ">
+            <div className=" relative w-max h-max ">
                 
 
                 
@@ -37,15 +40,40 @@ export default function Content({setState, text, index, photo, demo}:any){
                                       leaveTo="opacity-0 scale-95 "
                                       show={!active}
                 >
+                <div className=" pic-wrap ">
+                {index===1 &&
                  <Image         
-                    src={`/assets/img/1/${photo}`}
+                    src={school}
+                    alt="loginpage"
+                    // width={800}
+                    // height={500}
+                    className="  filter  rounded-lg  cursor-pointer "
+                    priority={true}
+                    placeholder='blur'
+                    objectFit="cover"
+                    layout="responsive"
+                    sizes="(min-width: 1440px) 1800px, (min-width: 1280px) 1050px, (min-width: 1024px) 600px, (min-width: 768px) 400px,(min-width: 475px) 300px, 1000px"
+                   
+                    
+                    quality={100}
+                />}
+                {/* {index===2 &&                 
+                <Image         
+                    src={help}
                     alt="loginpage"
                     width={800}
                     height={500}
-                    className="  filter object-cover rounded-lg  cursor-pointer "
+                    className="  filter  rounded-lg  cursor-pointer "
                     priority={true}
+                    placeholder='blur'
+                    objectFit="cover"
+                    layout="fixed"
+                    sizes="320 640 750"
                     quality={100}
                 />
+                
+                } */}
+                </div>
                 </Transition>
                 <Transition
                                       enter="transform transition duration-[400ms]"
@@ -56,36 +84,56 @@ export default function Content({setState, text, index, photo, demo}:any){
                                       leaveTo="opacity-0 scale-95 "
                                       show={active}
                 >
-                                 
-                    <Image         
-                    src={`/assets/img/1/${demo}`}
-                    alt="loginpage"
-                    width={800}
-                    height={500}
-                    className=" filter object-cover rounded-lg"
-                    priority={true}
-                    quality={100}
+                {index===1 &&
+                <Image         
+                        src={demo1}
+                        alt="loginpage"
+                        width={800}
+                        height={500}
+                        className=" filter  rounded-lg"
+                        priority={true}
+                        objectFit="cover"
+                        layout="fixed"
+                        sizes="320 640 750"
+                        quality={100}
                 /> 
+                }
+                {index===2 &&
+                <Image         
+                                src={demo2}
+                                alt="loginpage"
+                                width={800}
+                                height={500}
+                                className=" filter  rounded-lg"
+                                priority={true}
+                                objectFit="cover"
+                                layout="fixed"
+                                sizes="320 640 750"
+                                quality={100}
+                /> 
+                }         
+
                 </Transition>
                 
                 {/* <img className="  filter w-[800px] h-[500px]  " src="/assets/img/1/angular.jpg" /> */}
-                {!active ? 
+                {/*{!active ? 
                 <div className={` text-[${text}] flex-col absolute text-center inset-0 z-10 justify-start items-start`}>
                     {index===1 &&
-                    <><div className=' space-x-48 justify-center items-center mb-36 '>
-                                <span className='n1 text-8xl'>S</span>
-                                <span className='n1 text-8xl'>C</span>
-                                <span className='n1 text-8xl'>H</span>
-                                <span className='n1 text-8xl'>O</span>
-                                <span className='n1 text-8xl'>O</span>
-                                <span className='n1 text-8xl'>L</span>
-                            </div><div className=' space-x-32 justify-center items-center '>
-                                    <span className='n1 text-8xl'>W</span>
-                                    <span className='n1 text-8xl'>O</span>
-                                    <span className='n1 text-8xl'>R</span>
-                                    <span className='n1 text-8xl'>K</span>
+                    <>
+                     <div className=' space-x-28 n1 text-8xl xl:space-x-48 justify-center items-center mb-36 '>
+                                <span >S</span>
+                                <span >C</span>
+                                <span >H</span>
+                                <span >O</span>
+                                <span >O</span>
+                                <span >L</span>
+                            </div><div className=' n1 text-8xl space-x-14 xl:space-x-32 justify-center items-center '>
+                                    <span >W</span>
+                                    <span >O</span>
+                                    <span >R</span>
+                                    <span >K</span>
 
-                                </div>
+                                </div> 
                     </>
                     }
                     {index===2 &&
@@ -131,7 +179,7 @@ export default function Content({setState, text, index, photo, demo}:any){
                     </svg>
                     <span className="ml-3 ">Leave</span>
                 </a>
-                }
+                }*/}
  
                 
             </div>

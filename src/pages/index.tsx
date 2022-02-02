@@ -22,7 +22,8 @@ import Content from '../core/components/Content';
 import Description from '../core/components/Description';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import school from '../../public/assets/img/1/school.jpg'
+import help from '../../public/assets/img/1/help.jpg'
 
 // install Swiper modules
 SwiperCore.use([Pagination, Mousewheel]);
@@ -38,10 +39,8 @@ const Home: NextPage = () => {
   const initialState = {
     text: '#c5cec3',
     bg:'#141414',
-    photo:"",
-    demo:"",
   };
-  const [{ text, bg, photo, demo }, setState ] = useState(initialState);
+  const [{ text, bg }, setState ] = useState(initialState);
 
   const initialWorkState ={
     completed:'',
@@ -109,12 +108,15 @@ const Home: NextPage = () => {
                         {!clicked && 
                         <>      
                           <Image         
-                            src="/assets/img/1/school.jpg"
+                            src={school}
                             alt="loginpagemini"
                             width={200}
                             height={200}
-                            className=" filter grayscale hover:grayscale-0 block  object-cover rounded-lg"
+                            className="  block   rounded-lg"
                             onClick={()=>setIsClicked(true)}
+                            quality={100}
+                            placeholder='blur'
+                            objectFit='cover'
                             priority={true}
                           />      
                           <Yes isShown={isShown} />
@@ -129,7 +131,7 @@ const Home: NextPage = () => {
                           <Description index={index} setStateWork={setStateWork} completed={completed} type={type} role={role} client={client} subject={subject}/>
 
                         
-                          <Content index={index} setStateWork={setStateWork} setState={setState} text={text} photo={photo} demo={demo}  />
+                          <Content index={index} setStateWork={setStateWork} setState={setState} text={text}  />
                           
                           </div>
 
@@ -141,12 +143,16 @@ const Home: NextPage = () => {
                       {!clicked && 
                         <>      
                             <Image         
-                            src="/assets/img/1/help.jpg"
+                            src={help}
                             alt="help"
                             width={200}
                             height={200}
-                            className=" filter grayscale hover:grayscale-0 block  object-cover rounded-lg"
+                            className="  block   rounded-lg"
                             onClick={()=>setIsClicked(true)}
+                            objectFit='cover'
+                            
+                            placeholder="blur"
+                            quality={100}
                             priority={true}
                           />        
                           <Yes isShown={isShown} />
@@ -158,13 +164,13 @@ const Home: NextPage = () => {
                           <Description index={index} setStateWork={setStateWork} completed={completed} type={type} role={role} client={client} subject={subject}/>
 
                         
-                          <Content index={index} setStateWork={setStateWork} setState={setState} text={text} photo={photo} demo={demo} />
+                          <Content index={index} setStateWork={setStateWork} setState={setState} text={text}  />
                           </div>
                           </>
                         }
                       </SwiperSlide>
-                      <SwiperSlide className='flex-col smoky '>
-                      <span className='n0 text-2xl smoky '>It was my biggest works</span>
+                      <SwiperSlide className='flex-col  '>
+                      <span className='n0 text-2xl  '>It was my biggest works</span>
                       <div className='inline-flex space-x-4 n0 text-2xl ' ><span className=' '>Want to see<Link href='/contact'><span className='n0 text-2xl hover:underline '> More </span></Link>?</span></div>
                       <p className='n1 text-5xl mt-16 '>OR</p>
                       </SwiperSlide>
