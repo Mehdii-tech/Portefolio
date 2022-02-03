@@ -40,7 +40,7 @@ const About: NextPage = () => {
               </h1>
 
               <p className=" leading-8  mb-5 text-base font-medium tracking-tighter  sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                who loves sleek designs and interfaces. Passionate about security/ia and heavy work, i'm here to do what you want
+                who loves sleek designs and interfaces. Passionate about security/ia and heavy work, i&apos;m here to do what you want
               </p>
 
               <br></br>
