@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { Menu, Transition } from "@headlessui/react";
 import { useRouter } from "next/router";
+import DayNight from "../components/Daynight";
+import { useTheme } from '../hooks/Theme';
 
 
 export default function Layout(props:any){
@@ -166,6 +168,7 @@ export default function Layout(props:any){
         <Link href="/about"  ><a className=" sm:inline-flex hidden hover:text-gray-400 font-medium pt-2 sm:pt-6 text-tiny sm:text-base  ">ABOUT ME</a></Link>
         {router.pathname!="/contact" && 
         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+          <DayNight />
           <Link href='/contact'>
                   <a className=" flex items-center rounded-md text-base font-medium ">
                   
@@ -221,7 +224,7 @@ export default function Layout(props:any){
                 <a  className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 text-gray-900 ">
                  
                 <svg className="flex-shrink-0 h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                  <div className="ml-2">
                    <span className="text-base font-medium ">

@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import React, { useCallback, useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
+import {Theme} from '../utils/styles'
 
 
 // Import Swiper styles
@@ -55,7 +56,7 @@ const Home: NextPage = () => {
     text: '#c5cec3',
     bg:'#141414',
   };
-  const [{ text, bg }, setState ] = useState(initialState);
+  const [Theme, setState ] = useState(initialState);
 
   const initialWorkState ={
     completed:'',
@@ -69,10 +70,10 @@ const Home: NextPage = () => {
  
 
   function slideChange(activeIndex:number){
-    console.log(text,bg)
+    console.log(Theme.text,Theme.bg)
     setIndex(activeIndex)
     setState({...initialState})
-    console.log(text,bg)
+    console.log(Theme.text,Theme.bg)
     setIsShown(true)
     setIsClicked(false)
     
@@ -87,7 +88,7 @@ console.log(mobile, 'mobile')
   
   return (
     <>
-<Layout index={index} text={text} bg={bg} clicked={clicked} swiped={handleExternalChangeSlide}  >
+<Layout index={index} text={Theme.text} bg={Theme.bg} clicked={clicked} swiped={handleExternalChangeSlide}  >
     <Swiper speed={50}  direction={'vertical'} slidesPerView={1} spaceBetween={0} mousewheel={{sensitivity:1}}  centeredSlides={true} pagination={true}
             onSlideChange={(swiper) => slideChange(swiper.activeIndex)}   className="mySwiper"  onSwiper={setSwiperInstance} >                   
             <SwiperSlide className="  flex-col waviy " >  
@@ -152,13 +153,13 @@ console.log(mobile, 'mobile')
     
 
                           {!hide &&
-                            <Content index={index} setStateWork={setStateWork} setState={setState} text={text}  />
+                            <Content index={index} setStateWork={setStateWork} setState={setState} text={Theme.text}  />
                           }
                           </>
                           :
                           <>
                           <Description index={index} setStateWork={setStateWork} completed={completed} type={type} role={role} client={client} subject={subject}/> 
-                          <Content index={index} setStateWork={setStateWork} setState={setState} text={text}  />
+                          <Content index={index} setStateWork={setStateWork} setState={setState} text={Theme.text}  />
                           </>
                           }
                           
@@ -166,8 +167,8 @@ console.log(mobile, 'mobile')
                           <a  className=" sm:hidden justify-center mx-auto mt-6  p-3 w-40 flex cursor-pointer items-center rounded-md text-base font-medium text-gray-900 ">
                               {!hide ?
                               <>
-                              <svg className={` flex-shrink-0 h-6 w-6 text-[${text}] ` } xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              <svg className={` flex-shrink-0 h-6 w-6 text-[${Theme.text}] ` } xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                               </svg>
                               <span onClick={()=>setHide(true)} className="ml-3 underline ">See descriptions</span>
                               </>
@@ -213,13 +214,13 @@ console.log(mobile, 'mobile')
     
 
                           {!hide &&
-                            <Content index={index} setStateWork={setStateWork} setState={setState} text={text}  />
+                            <Content index={index} setStateWork={setStateWork} setState={setState} text={Theme.text}  />
                           }
                           </>
                           :
                           <>
                           <Description index={index} setStateWork={setStateWork} completed={completed} type={type} role={role} client={client} subject={subject}/> 
-                          <Content index={index} setStateWork={setStateWork} setState={setState} text={text}  />
+                          <Content index={index} setStateWork={setStateWork} setState={setState} text={Theme.text}  />
                           </>
                           }
                           
@@ -227,8 +228,8 @@ console.log(mobile, 'mobile')
                           <a  className=" sm:hidden justify-center mx-auto mt-6  p-3 w-40 flex cursor-pointer items-center rounded-md text-base font-medium text-gray-900 ">
                               {!hide ?
                               <>
-                              <svg className={` flex-shrink-0 h-6 w-6 text-[${text}] ` } xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              <svg className={` flex-shrink-0 h-6 w-6 text-[${Theme.text}] ` } xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                               </svg>
                               <span onClick={()=>setHide(true)} className="ml-3 underline ">See descriptions</span>
                               </>
