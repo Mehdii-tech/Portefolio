@@ -45,6 +45,7 @@ export default function Content({ setState, text, index }: any) {
                                 height={500}
                                 className="  filter  rounded-lg  cursor-pointer "
                                 priority={true}
+                                layout="responsive"
                                 placeholder='blur'
                                 objectFit="cover"
                                 quality={100}
@@ -60,6 +61,7 @@ export default function Content({ setState, text, index }: any) {
                     placeholder='blur'
                     objectFit="cover"
                     quality={100}
+                    layout="responsive"
                 />
                 
                 } 
@@ -84,6 +86,7 @@ export default function Content({ setState, text, index }: any) {
                             className=" filter  rounded-lg"
                             priority={true}
                             objectFit="cover"
+                            layout="responsive"
                             quality={100}
                         />
                     }
@@ -96,7 +99,7 @@ export default function Content({ setState, text, index }: any) {
                             className=" filter  rounded-lg"
                             priority={true}
                             objectFit="cover"
-
+                            layout="responsive"
                             quality={100}
                         />
                     }

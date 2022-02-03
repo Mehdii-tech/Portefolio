@@ -131,6 +131,7 @@ const Home: NextPage = () => {
                             quality={100}
                             placeholder='blur'
                             objectFit='cover'
+                            layout='fixed'
                             priority={true}
                           />      
                           <Yes isShown={isShown} />
@@ -189,7 +190,7 @@ const Home: NextPage = () => {
                             className="  block   rounded-lg"
                             onClick={()=>setIsClicked(true)}
                             objectFit='cover'
-                            
+                            layout='fixed'
                             placeholder="blur"
                             quality={100}
                             priority={true}
