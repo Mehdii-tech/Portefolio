@@ -1,4 +1,3 @@
-import { Transition } from "@headlessui/react";
 import { useEffect } from "react";
 
 export default function Description({setStateWork, index, completed,type, role, client, subject }:any){
@@ -15,28 +14,28 @@ export default function Description({setStateWork, index, completed,type, role, 
     }
     },[setStateWork])
     return(                                      
-        <div className=" fixed lg:left-20 left-10  flex justify-start ">
+        <div className=" sm:fixed lg:left-20 sm:left-10 items-center justify-center flex  sm:justify-start ">
 
-            <div className="flex-col text-left space-y-2  ">
-                <li className="space-x-6 ">
+            <div className="flex-col sm:text-left text-center lg:space-y-2  ">
+                <li className="sm:space-x-6 ">
                     <ul className="text-base text-black n0">COMPLETED</ul>
-                    <ul className=" lg:text-4xl text-2xl n1">{completed}</ul>
+                    <ul className=" lg:text-3xl xl:text-4xl text-2xl n1">{completed}</ul>
                 </li>
-                <li className="space-x-6 ">
+                <li className=" sm:space-x-6 ">
                     <ul className="text-base text-black n0 ">TYPE</ul>
-                    <ul className="lg:text-4xl text-2xl n1">{type}</ul>
+                    <ul className="lg:text-3xl xl:text-4xl  text-2xl n1">{type}</ul>
                 </li>
-                <li className="space-x-6">
+                <li className=" sm:space-x-6">
                     <ul className="text-base text-black n0 ">ROLE</ul>
-                    <ul className=" lg:text-4xl text-2xl n1">{role}</ul>
+                    <ul className=" lg:text-3xl xl:text-4xl  text-2xl n1">{role}</ul>
                 </li>
-                <li className="space-x-6 ">
+                <li className=" sm:space-x-6 ">
                     <ul className="text-base text-black n0">CLIENT</ul>
-                    <ul className=" lg:text-4xl text-2xl n1">{client}</ul>
+                    <ul className=" lg:text-3xl xl:text-4xl  text-2xl n1">{client}</ul>
                 </li>
-                <li className="space-x-6  ">
+                <li className=" sm:space-x-6  ">
                     <ul className="text-base text-black n0">Subject</ul>
-                    <ul className="w-20 leading-8 text-2xl lg:text-4xl n1">{subject}</ul>
+                    <ul className=" sm:w-20 sm:leading-8 text-2xl xl:text-4xl  lg:text-3xl n1">{subject}</ul>
                 </li>
 
 

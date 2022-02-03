@@ -1,7 +1,5 @@
 import type { NextPage } from 'next'
-
 import Layout from '../core/layouts/MainLayout'
-import { useState } from 'react'
 import Link from 'next/link'
 
 const About: NextPage = () => {
@@ -13,7 +11,6 @@ const About: NextPage = () => {
             <div className="p perspective-text">
               <div className="p perspective-line">
                 <p></p>
-                {/* <p>Patience</p> */}
               </div>
               <div className="p perspective-line">
                 <p>Patience</p>

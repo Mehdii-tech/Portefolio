@@ -5,59 +5,51 @@ import school from '../../../public/assets/img/1/school.jpg'
 import help from '../../../public/assets/img/1/help.jpg'
 import demo1 from '../../../public/assets/img/1/demo1.gif'
 import demo2 from '../../../public/assets/img/1/demo2.gif'
-export default function Content({setState, text, index}:any){
-    
+export default function Content({ setState, text, index }: any) {
+
     const [active, setActive] = useState(false);
-      
 
-    useEffect(()=>{ 
-    switch (index) {
-        case 1:{
-            setState({text:'#53bc48',bg:'#5e7091'})
+
+    useEffect(() => {
+        switch (index) {
+            case 1: {
+                setState({ text: '#53bc48', bg: '#5e7091' })
+            }
+                break;
+            case 2: {
+                setState({ text: '#2d60a8', bg: '#c38b71' })
+            }
+                break;
         }
-        break;
-        case 2:{
-            setState({text:'#2d60a8',bg:'#c38b71'}) 
-        }
-        break;
-    }
-    },[setState])
-    console.log( text, index,'text')
-    return(
-        <>   
-           
-            
+    }, [setState])
+    return (
+        <>
+
+
             <div className=" relative w-max h-max ">
-                
-
-                
                 <Transition
-                                      enter="transform transition duration-[400ms]"
-                                      enterFrom="opacity-0 scale-0 "
-                                      enterTo="opacity-100 rotate-0 scale-125 "
-                                      leave="transform  transition ease-in-out"
-                                      leaveFrom="opacity-100 rotate-0 scale-100 "
-                                      leaveTo="opacity-0 scale-95 "
-                                      show={!active}
+                    enter="transform transition duration-[400ms]"
+                    enterFrom="opacity-0 scale-0 "
+                    enterTo="opacity-100 rotate-0 scale-125 "
+                    leave="transform  transition ease-in-out"
+                    leaveFrom="opacity-100 rotate-0 scale-100 "
+                    leaveTo="opacity-0 scale-95 "
+                    show={!active}
+                    className={" xxl:w-[1000px] xl:w-[850px] lg:w-[630px] md:w-[470px] sm:w-[400px] xs:w-[330px] xxs:w-[230px] "}
                 >
-                <div className=" pic-wrap ">
-                {index===1 &&
-                 <Image         
-                    src={school}
-                    alt="loginpage"
-                    // width={800}
-                    // height={500}
-                    className="  filter  rounded-lg  cursor-pointer "
-                    priority={true}
-                    placeholder='blur'
-                    objectFit="cover"
-                    layout="responsive"
-                    sizes="(min-width: 1440px) 1800px, (min-width: 1280px) 1050px, (min-width: 1024px) 600px, (min-width: 768px) 400px,(min-width: 475px) 300px, 1000px"
-                   
-                    
-                    quality={100}
-                />}
-                {/* {index===2 &&                 
+                        {index === 1 &&
+                            <Image
+                                src={school}
+                                alt="loginpage"
+                                width={1000}
+                                height={500}
+                                className="  filter  rounded-lg  cursor-pointer "
+                                priority={true}
+                                placeholder='blur'
+                                objectFit="cover"
+                                quality={100}
+                            />}
+             {index===2 &&                 
                 <Image         
                     src={help}
                     alt="loginpage"
@@ -67,67 +59,61 @@ export default function Content({setState, text, index}:any){
                     priority={true}
                     placeholder='blur'
                     objectFit="cover"
-                    layout="fixed"
-                    sizes="320 640 750"
                     quality={100}
                 />
                 
-                } */}
-                </div>
+                } 
+                    
                 </Transition>
                 <Transition
-                                      enter="transform transition duration-[400ms]"
-                                      enterFrom="opacity-0 scale-0 "
-                                      enterTo="opacity-100 rotate-0 scale-125 "
-                                      leave="transform  transition ease-in-out"
-                                      leaveFrom="opacity-100 rotate-0 scale-100 "
-                                      leaveTo="opacity-0 scale-95 "
-                                      show={active}
+                    enter="transform transition duration-[400ms]"
+                    enterFrom="opacity-0 scale-0 "
+                    enterTo="opacity-100 rotate-0 scale-125 "
+                    leave="transform  transition ease-in-out"
+                    leaveFrom="opacity-100 rotate-0 scale-100 "
+                    leaveTo="opacity-0 scale-95 "
+                    show={active}
+                    className={" xxl:w-[1000px] xl:w-[850px] lg:w-[630px] md:w-[470px] sm:w-[400px] xs:w-[330px] xxs:w-[230px] "}
                 >
-                {index===1 &&
-                <Image         
-                        src={demo1}
-                        alt="loginpage"
-                        width={800}
-                        height={500}
-                        className=" filter  rounded-lg"
-                        priority={true}
-                        objectFit="cover"
-                        layout="fixed"
-                        sizes="320 640 750"
-                        quality={100}
-                /> 
-                }
-                {index===2 &&
-                <Image         
-                                src={demo2}
-                                alt="loginpage"
-                                width={800}
-                                height={500}
-                                className=" filter  rounded-lg"
-                                priority={true}
-                                objectFit="cover"
-                                layout="fixed"
-                                sizes="320 640 750"
-                                quality={100}
-                /> 
-                }         
+                    {index === 1 &&
+                        <Image
+                            src={demo1}
+                            alt="loginpage"
+                            width={800}
+                            height={500}
+                            className=" filter  rounded-lg"
+                            priority={true}
+                            objectFit="cover"
+                            quality={100}
+                        />
+                    }
+                    {index === 2 &&
+                        <Image
+                            src={demo2}
+                            alt="loginpage"
+                            width={800}
+                            height={500}
+                            className=" filter  rounded-lg"
+                            priority={true}
+                            objectFit="cover"
+
+                            quality={100}
+                        />
+                    }
 
                 </Transition>
-                
-                {/* <img className="  filter w-[800px] h-[500px]  " src="/assets/img/1/angular.jpg" /> */}
-                {/*{!active ? 
+                {!active ? 
                 <div className={` text-[${text}] flex-col absolute text-center inset-0 z-10 justify-start items-start`}>
                     {index===1 &&
                     <>
-                     <div className=' space-x-28 n1 text-8xl xl:space-x-48 justify-center items-center mb-36 '>
+                     <div className=' lg:space-x-24 md:space-x-20 sm:space-x-14 xs:space-x-10 xs:text-6xl space-x-5 text-45xl n1 sm:text-7xl md:text-75xl xl:text-8xl xl:space-x-36 justify-center  items-center md:-mb-5 lg:mb-16  '>
                                 <span >S</span>
                                 <span >C</span>
                                 <span >H</span>
                                 <span >O</span>
                                 <span >O</span>
                                 <span >L</span>
-                            </div><div className=' n1 text-8xl space-x-14 xl:space-x-32 justify-center items-center '>
+                            </div><div className=' n1 md:text-75xl sm:space-x-7 xs:space-x-6 xs:text-6xl space-x-3 text-45xl sm:text-7xl xl:text-8xl md:space-x-8 lg:space-x-14 xl:space-x-24 justify-center items-center '>
                                     <span >W</span>
                                     <span >O</span>
                                     <span >R</span>
@@ -137,25 +123,25 @@ export default function Content({setState, text, index}:any){
                     </>
                     }
                     {index===2 &&
-                        <><div className=' space-x-52 justify-center items-center '>
-                                <span className='n1 text-8xl'>H</span>
-                                <span className='n1 text-8xl'>E</span>
-                                <span className='n1 text-8xl'>L</span>
-                                <span className='n1 text-8xl'>P</span>
-                            </div><div className=' space-x-20 justify-center items-center '>
-                                    <span className='n1 text-8xl'>Y</span>
-                                    <span className='n1 text-8xl'>O</span>
-                                    <span className='n1 text-8xl'>U</span>
-                                    <span className='n1 text-8xl'>R</span>
-                                </div><div className=' space-x-20 justify-center items-center '>
-                                    <span className='n1 text-7xl'>N</span>
-                                    <span className='n1 text-7xl'>E</span>
-                                    <span className='n1 text-7xl'>I</span>
-                                    <span className='n1 text-7xl'>G</span>
-                                    <span className='n1 text-7xl'>H</span>
-                                    <span className='n1 text-7xl'>B</span>
-                                    <span className='n1 text-7xl'>O</span>
-                                    <span className='n1 text-7xl'>R</span>
+                        <><div className=' n1 xl:text-8xl xxs:text-5xl xxs:space-x-14  xs:text-6xl xs:space-x-24 sm:text-7xl lg:text-75xl xl:space-x-52 lg:space-x-44 sm:space-x-32 md:space-x-36 justify-center items-center xl:mb-0 md:mb-5 xxs:-mb-5   '>
+                                <span >H</span>
+                                <span >E</span>
+                                <span >L</span>
+                                <span >P</span>
+                            </div><div className=' n1 xl:text-8xl xxs:text-5xl xs:text-6xl sm:text-7xl lg:text-75xl xxs:space-x-9 xs:space-x-20  justify-center items-center '>
+                                    <span >Y</span>
+                                    <span >O</span>
+                                    <span >U</span>
+                                    <span >R</span>
+                                </div><div className=' n1 xs:text-5xl xxs:text-4xl xxs:space-x-6 sm:text-6xl sm:space-x-10 lg:text-7xl xl:space-x-20 xs:space-x-9 md:space-x-14 justify-center items-center '>
+                                    <span >N</span>
+                                    <span >E</span>
+                                    <span >I</span>
+                                    <span >G</span>
+                                    <span >H</span>
+                                    <span >B</span>
+                                    <span >O</span>
+                                    <span >R</span>
 
                         </div>
                     </> 
@@ -179,12 +165,12 @@ export default function Content({setState, text, index}:any){
                     </svg>
                     <span className="ml-3 ">Leave</span>
                 </a>
-                }*/}
- 
-                
+                }
+
+
             </div>
 
-        </>   
-        
+        </>
+
     )
 }

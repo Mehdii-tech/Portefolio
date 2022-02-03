@@ -1,4 +1,4 @@
-import { ThemeProvider } from "next-themes";
+import 'tailwindcss/tailwind.css'
 import { AppProps } from "next/app";
 import '../styles/globals.css'
 import Header from '../utils/config'

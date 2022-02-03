@@ -17,19 +17,6 @@ const Contact:NextPage=()=>{
                         <span >C</span>
                         <span >T</span>
                     </div>
-                    {/* <div className=' space-x-32 justify-center items-center '>
-                        <span className='n1 text-8xl'>W</span>
-                        <span className='n1 text-8xl'>H</span>
-                        <span className='n1 text-8xl'>A</span>
-                        <span className='n1 text-8xl'>T</span>
-                        <span className='n1 text-8xl'>Y</span>
-                        <span className='n1 text-8xl'>O</span>
-                        <span className='n1 text-8xl'>U</span>
-                        <span className='n1 text-8xl'>W</span>
-                        <span className='n1 text-8xl'>A</span>
-                        <span className='n1 text-8xl'>N</span>
-                        <span className='n1 text-8xl'>T</span>
-                </div> */}
             </div>          
             <FormContact />
         </Layout>

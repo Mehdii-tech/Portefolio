@@ -1,7 +1,7 @@
 import emailjs from '@emailjs/browser'
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import { useForm } from 'react-hook-form'
-import Joi, { options, required } from 'joi'
+import Joi from 'joi'
 import { joiResolver } from '@hookform/resolvers/joi'
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -33,10 +33,10 @@ export default function FormContact(){
       } = useForm({
         resolver: joiResolver(
           Joi.object({
-            name: Joi.string(),
-            email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: false } }),
+            name: Joi.string().required(),
+            email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: false } }).required(),
             company: Joi.string().allow(null),
-            message: Joi.string()
+            message: Joi.string().required()
           }),
         ),
       })
@@ -46,8 +46,7 @@ export default function FormContact(){
       }
 
 
-      const sendEmail = async (data:any) => {
-        // let formState:UserCredential
+      const sendEmail = async (data:UserCredential) => {
 
         const params = {
           ...data,
@@ -88,15 +87,8 @@ export default function FormContact(){
               Name
           </label>
           <input className={(errors.name?.message ? " border-red-500 ": " " ) + "appearance-none block w-full bg-gray-200 text-black  border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"} id="grid-name" type="text" placeholder="John" {...register("name") } ></input>
-          {errors.name?.message && <p className=" text-red-500 text-xs italic ">{errors.name?.message}</p>}{/* <p className=" text-xs italic">Please fill out this field.</p> */}
+          {errors.name && <p className=" text-red-500 text-xs italic ">{errors.name?.message}</p>}{/* <p className=" text-xs italic">Please fill out this field.</p> */}
           </div>
-          {/* <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          <label className="block uppercase tracking-wide  text-xs font-bold mb-2" htmlFor="grid-name">
-              Name
-          </label>
-          <input className="appearance-none block w-full bg-gray-200  border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-name" type="text" placeholder="John"></input>
-          <p className="text-red-500 text-xs italic">Please fill out this field.</p>
-          </div> */}
       </div>
       <div className="flex flex-wrap justify-center -mx-3 ">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -104,7 +96,7 @@ export default function FormContact(){
               E-mail
           </label>
           <input {...register("email")} className={(errors.email?.message ? " border-red-500 " : " border-gray-200  " ) + "appearance-none block w-full bg-gray-200 text-black border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"} id="email" type="email" placeholder="xxxxx@mail.com"></input>
-          {errors.email?.message && <p className=" text-red-500 text-xs italic ">{errors.email?.message}</p>}
+          {errors.email && <p className=" text-red-500 text-xs italic ">{errors.email?.message}</p>}
           </div>
 
       </div>
@@ -113,8 +105,8 @@ export default function FormContact(){
           <label className="block uppercase tracking-wide  text-xs font-bold mb-2" htmlFor="grid-company">
               Company
           </label>
-          <input {...register('company',{required:false})} className="appearance-none block w-full bg-gray-200 text-black  border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-company" type="text"></input>
-          {/* <p className="text-gray-600 text-xs italic">Some tips - as long as needed</p> */}
+          <input {...register('company')} className="appearance-none block w-full bg-gray-200 text-black  border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-company" type="text"></input>
+          {errors.company && <p className=" text-red-500 text-xs italic ">Even you don't have a Company put something</p>}
           </div>
       </div>
       <div className="flex flex-wrap justify-center -mx-3 ">
@@ -123,8 +115,7 @@ export default function FormContact(){
               Message
           </label>
           <textarea {...register("message")} className={(errors.message?.message ? " border-red-500 " : " border-gray-200  " ) +" no-resize appearance-none block w-full bg-gray-200 text-black border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48"} id="message" placeholder={"Hello Mehdi,"}></textarea>
-          {/* <p className="text-gray-600 text-xs italic">Re-size can be disabled by set by resize-none / resize-y / resize-x / resize</p> */}
-          {errors.message?.message && <p className=" text-red-500 text-xs italic ">{errors.message?.message}</p>}
+          {errors.message && <p className=" text-red-500 text-xs italic ">{errors.message?.message}</p>}
           </div>
       </div>
       <div className="flex flex-wrap justify-center -mx-3 ">
