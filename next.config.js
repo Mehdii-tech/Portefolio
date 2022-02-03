@@ -1,6 +1,25 @@
 const { createSecureHeaders } = require("next-secure-headers");
+const withImages = require('next-images');
+const optimizedImages = require('next-optimized-images');
 /** @type {import('next').NextConfig} */
-module.exports = {
+module.exports = withImages({
+  webpack(config, options) {
+    config.module.rules.push({
+      test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+      use: {
+        loader: 'url-loader',
+        options: {
+          limit: 100000,
+          target: 'serverless'
+        }
+      }
+    });
+
+    return config;
+  },
+  assetPrefix: noPrefix ? '' : '/Portfolio/',
+}
+), {
   reactStrictMode: true,
   images: {
     deviceSizes: [320, 425, 640, 768, 1024, 1280, 1440, 2560],
