@@ -294,18 +294,30 @@ export default function Layout(props:any){
         leaveFrom="opacity-100 rotate-0 scale-100 "
         leaveTo="opacity-0 scale-95 "
           show={!props.clicked && router.pathname==='/'}
-          className={"flex relative  pb-4  animate-pulse bottom-0 items-end justify-center space-y-2  xs:font-light xxs:font-extralight font-normal "}
+          className={"flex relative  pb-4   bottom-0 items-end justify-center space-y-2  xs:font-light xxs:font-extralight font-normal "}
         >
         
           
               {props.index != 3 ?
-                              <>
-                              <span className=" mt-16  pr-2 ">Scroll</span><div className="scroll-downs  ">
+                              <>{!props.mobile ?                        <>      <span className=" mt-16  pr-2 ">Scroll</span><div className="scroll-downs  ">
                 <div className="mousey border-white fixed ">
                   <div className="scroller  bg-white"></div>
                 </div>
 
+              </div></>:
+              <div className='wrapper'>
+                <svg id="Swipe-vertical_1" className='inline-block w-20 h-20 ' data-name="Swipe vertical 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                <path className="hand-y" fill={props.text} d="M131.09,69.21l-34,24.17-21.6-21.6a9.25,9.25,0,0,0-13.08,0h0a9.25,9.25,0,0,0,0,13.08L103,125.43l-14.18-1.08c-5.11,0-8.72,3.22-9.25,9.25,0,0-1,9.25,3.83,9.25h48l30.14-30.14A9.25,9.25,0,0,0,162.72,101L143.43,72.11A9.28,9.28,0,0,0,131.09,69.21Z"/>
+                <g className="swipe-vertical">
+                  <path className="line-vertical" fill={props.text} d="M43.94,94.27c-12.46-19.69,0-37,0-37"/>
+                  <polyline className="arrow-down" fill={props.text} points="47.93 88.53 45.35 96.75 45.33 96.75 37.11 94.17"/>
+                  <polyline className="arrow-up" fill={props.text} points="46.59 64.92 44.01 56.69 43.98 56.7 35.76 59.28"/>
+                </g>
+              </svg>
               </div>
+              
+              }
+
               </> : 
                             <svg onClick={()=>props.swiped(0)} className="w-8 h-8 cursor-pointer hover:animate-bounce mr-5 " version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
                             viewBox="0 0 330 330">

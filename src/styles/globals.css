@@ -74,7 +74,7 @@ p {
 }
 @media (min-width: 320px) {
   .swiper {
-    max-height: 300px;
+    max-height: 320px;
   }
 }
 @media (min-width: 425px) {
@@ -355,28 +355,76 @@ span:nth-of-type(21) {
 .pic-wrap {
   position: relative;
 }
-/* @media (min-width: 475px) {
-  .pic-wrap {
-    width: 300px;
+.hand-tap,
+.hand-y {
+  stroke: #000;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.tap-1 {
+  opacity: 0.5;
+}
+@keyframes tap {
+  0% {
+    transform: rotateX(0deg);
+  }
+  10% {
+    transform: rotateX(12.5deg);
+  }
+  25% {
+    transform: rotateX(25deg);
   }
 }
-@media (min-width: 1280px) {
-  .pic-wrap {
-    width: 1050px;
+.tap-1 {
+  animation: tap-circle 1.25s ease-out backwards;
+  animation-iteration-count: infinite;
+}
+.hand-tap {
+  animation: tap 1.25s ease-out backwards;
+  animation-iteration-count: infinite;
+}
+.arrow-down,
+.line-vertical,
+.arrow-up {
+  stroke-width: 20px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hand-y {
+  animation: swipe-y 1.25s ease-in-out backwards;
+  animation-iteration-count: infinite;
+}
+.wrapper * {
+  transform-origin: 50% 50%;
+  perspective: 100px;
+}
+@keyframes swipe-y {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(50px) rotateZ(-10deg);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-50px) rotateZ(10deg);
   }
 }
-@media (min-width: 1440px) {
-  .pic-wrap {
-    width: 2000px;
+@keyframes tap-circle {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(1.05);
+    opacity: 0.6;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 0.5;
   }
 }
-@media (min-width: 1024px) {
-  .pic-wrap {
-    width: 900px;
-  }
-}
-@media (min-width: 768px) {
-  .pic-wrap {
-    width: 400px;
-  }
-} */

@@ -83,7 +83,7 @@ const Home: NextPage = () => {
 
   
   return (
-<Layout index={index} text={text} bg={bg} clicked={clicked} swiped={handleExternalChangeSlide}  >
+<Layout mobile={mobile} index={index} text={text} bg={bg} clicked={clicked} swiped={handleExternalChangeSlide}  >
     <Swiper speed={50}  direction={'vertical'} slidesPerView={1} spaceBetween={0} mousewheel={{sensitivity:1}}  centeredSlides={true} pagination={true}
             onSlideChange={(swiper) => slideChange(swiper.activeIndex)} className="mySwiper"  onSwiper={setSwiperInstance} >                   
             <SwiperSlide className="  flex-col waviy " >  
@@ -123,8 +123,8 @@ const Home: NextPage = () => {
                           <Image         
                             src={school}
                             alt="loginpagemini"
-                            width={200}
-                            height={200}
+                            width={260}
+                            height={260}
                             className="  block   rounded-lg"
                             onClick={()=>setIsClicked(true)}
                             quality={100}
@@ -132,7 +132,16 @@ const Home: NextPage = () => {
                             objectFit='cover'
                             layout='fixed'
                             priority={true}
-                          />      
+                          />
+                          {mobile &&
+                                                    <div className='wrapper pb-2 '>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" className='inline-block w-20 h-20 ' viewBox="0 0 200 200">
+                                                    <circle fill={text} className="tap-1" cx="89.43" cy="64.48" r="19.46"/>
+                                                    <path fill={text} className="hand-tap" d="M139.93,102.68,98.81,95.75V65.2A9.25,9.25,0,0,0,89.56,56h0a9.25,9.25,0,0,0-9.25,9.25v57.36L71,111.77c-3.61-3.61-8.44-3.89-13.08,0,0,0-7.24,5.84-3.83,9.25l34,34h42.63a9.25,9.25,0,0,0,9.07-7.43l6.82-34.09A9.28,9.28,0,0,0,139.93,102.68Z"/>
+                                                    </svg>      
+                                                  </div>
+                            }
+                      
                           {!mobile && <Yes isShown={isShown} />}
                         </> 
                         }
@@ -184,8 +193,8 @@ const Home: NextPage = () => {
                             <Image         
                             src={help}
                             alt="help"
-                            width={200}
-                            height={200}
+                            width={260}
+                            height={260}
                             className="  block   rounded-lg"
                             onClick={()=>setIsClicked(true)}
                             objectFit='cover'
@@ -193,7 +202,15 @@ const Home: NextPage = () => {
                             placeholder="blur"
                             quality={100}
                             priority={true}
-                          />        
+                          />
+                            {mobile &&
+                                                    <div className='wrapper pb-2 '>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" className='inline-block w-20 h-20 ' viewBox="0 0 200 200">
+                                                    <circle fill={text} className="tap-1" cx="89.43" cy="64.48" r="19.46"/>
+                                                    <path fill={text} className="hand-tap" d="M139.93,102.68,98.81,95.75V65.2A9.25,9.25,0,0,0,89.56,56h0a9.25,9.25,0,0,0-9.25,9.25v57.36L71,111.77c-3.61-3.61-8.44-3.89-13.08,0,0,0-7.24,5.84-3.83,9.25l34,34h42.63a9.25,9.25,0,0,0,9.07-7.43l6.82-34.09A9.28,9.28,0,0,0,139.93,102.68Z"/>
+                                                    </svg>      
+                                                  </div>
+                            }        
                           {!mobile && <Yes isShown={isShown} />}
                         </> 
                         }
