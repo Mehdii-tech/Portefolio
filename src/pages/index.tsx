@@ -83,10 +83,9 @@ const Home: NextPage = () => {
 
   
   return (
-    <>
 <Layout index={index} text={text} bg={bg} clicked={clicked} swiped={handleExternalChangeSlide}  >
     <Swiper speed={50}  direction={'vertical'} slidesPerView={1} spaceBetween={0} mousewheel={{sensitivity:1}}  centeredSlides={true} pagination={true}
-            onSlideChange={(swiper) => slideChange(swiper.activeIndex)}   className="mySwiper"  onSwiper={setSwiperInstance} >                   
+            onSlideChange={(swiper) => slideChange(swiper.activeIndex)} className="mySwiper"  onSwiper={setSwiperInstance} >                   
             <SwiperSlide className="  flex-col waviy " >  
                       <div className=' n1 xs:text-7xl lg:text-8xl lg:space-x-36 text-6xl space-x-8 xs:space-x-11 justify-center items-center '>
                         <span>W</span>
@@ -244,7 +243,7 @@ const Home: NextPage = () => {
                       </SwiperSlide>
         </Swiper>
   </Layout>
-    </>
+    
   )
 }
     

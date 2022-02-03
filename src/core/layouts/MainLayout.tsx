@@ -284,7 +284,7 @@ export default function Layout(props:any){
 
       
       
-        <footer className=" fixed  w-full bottom-0  mb-15  ">
+        <footer className=" absolute w-full bottom-0  mb-15  ">
         
         <Transition
         enter="transform transition duration-[400ms]"
@@ -299,12 +299,14 @@ export default function Layout(props:any){
         
           
               {props.index != 3 ?
-                              <><span className=" mt-16  pr-2 ">Scroll</span><div className="scroll-downs  ">
+                              <>
+                              <span className=" mt-16  pr-2 ">Scroll</span><div className="scroll-downs  ">
                 <div className="mousey border-white fixed ">
                   <div className="scroller  bg-white"></div>
                 </div>
 
-              </div></> : 
+              </div>
+              </> : 
                             <svg onClick={()=>props.swiped(0)} className="w-8 h-8 cursor-pointer hover:animate-bounce mr-5 " version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
                             viewBox="0 0 330 330">
                          <path fill={props.text} id="XMLID_224_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
