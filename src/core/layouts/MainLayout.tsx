@@ -17,7 +17,7 @@ export default function Layout(props:any){
       }
     `}</style>
          
-<div className="relative  ">
+<div className={(router.pathname === '/' ? ' xs:pb-0 pb-32 ':'')+"relative"}>
   <div className="z-50">
     <div className="flex justify-between lg:ml-10 lg:mr-10 z-50 pl-12 pr-12 items-center  py-8 md:justify-start md:space-x-10">
     <nav className=" inline-flex  space-x-6 justify-start md:w-0 md:flex-1 ">

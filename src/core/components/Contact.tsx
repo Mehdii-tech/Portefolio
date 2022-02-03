@@ -79,7 +79,7 @@ export default function FormContact(){
       };
     
     return(
-      <div className=" container mx-auto px-4 my-auto sm:overflow-y-hidden  ">
+      <div className=" container mx-auto px-4 my-auto sm:overflow-y-hidden   sm:pb-20 pb-32 ">
                        <style jsx global>{`
       body {
         overflow-y: visible;

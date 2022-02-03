@@ -6,7 +6,7 @@ const About: NextPage = () => {
   return (
     <>
       <Layout>
-        <div className=" flex mx-auto space-x-6 xl:space-x-48 ">
+        <div className=" flex mx-auto space-x-6 xl:space-x-48 sm:pb-12 pb-32 ">
           <div className=' ml-auto  justify-center items-center mb-10  hidden lg:flex '>
             <div className="p perspective-text">
               <div className="p perspective-line">

@@ -71,6 +71,36 @@ p {
   width: 100%;
   max-height: 680px;
 }
+@media (min-width: 320px) {
+  .swiper {
+    max-height: 450px;
+  }
+}
+@media (min-width: 425px) {
+  .swiper {
+    max-height: 550px;
+  }
+}
+@media (min-width: 1280px) {
+  .swiper {
+    max-height: 680px;
+  }
+}
+@media (min-width: 1440px) {
+  .swiper {
+    max-height: 680px;
+  }
+}
+@media (min-width: 1024px) {
+  .swiper {
+    max-height: 680px;
+  }
+}
+@media (min-width: 768px) {
+  .pic-wrap {
+    max-height: 600px;
+  }
+}
 
 .swiper-slide {
   text-align: center;
