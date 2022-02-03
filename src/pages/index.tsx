@@ -134,7 +134,7 @@ const Home: NextPage = () => {
                             layout='fixed'
                             priority={true}
                           />      
-                          <Yes isShown={isShown} />
+                          {!mobile && <Yes isShown={isShown} />}
                         </> 
                         }
                         {clicked &&
@@ -195,7 +195,7 @@ const Home: NextPage = () => {
                             quality={100}
                             priority={true}
                           />        
-                          <Yes isShown={isShown} />
+                          {!mobile && <Yes isShown={isShown} />}
                         </> 
                         }
                         {clicked &&

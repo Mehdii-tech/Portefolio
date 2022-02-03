@@ -21,7 +21,7 @@ export default function Layout(props:any){
   <div className="z-50">
     <div className="flex justify-between lg:ml-10 lg:mr-10 z-50 pl-12 pr-12 items-center  py-8 md:justify-start md:space-x-10">
     <nav className=" inline-flex  space-x-6 justify-start md:w-0 md:flex-1 ">
-      <Link  href="/"><a onClick={()=>props.swiped()} className=" cursor-pointer font-medium n2 sm:text-5xl text-4xl ">JABBOUR</a></Link>
+      <Link  href="/"><a onClick={()=>props.swiped(0)} className=" cursor-pointer font-medium n2 sm:text-5xl text-4xl ">JABBOUR</a></Link>
     
    
     <div className="relative pt-4 sm:pt-6">
@@ -203,11 +203,11 @@ export default function Layout(props:any){
         
         </Menu.Button>
         <Menu.Items as="div">
-        <div className="absolute right-0 z-5 -ml-4 mt-3 transform px-2  sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+        <div className="absolute outline-none right-0 z-5 -ml-4 mt-3 transform px-2  sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
             <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
               <div className="relative  grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                <Link href="/">
-                  <a  className="-m-3 p-3 flex items-start rounded-lg text-base font-medium text-gray-900 hover:bg-gray-100">
+                <Link  href="/">
+                  <a onClick={()=>props.swiped(1)} className="-m-3 p-3 flex items-start rounded-lg text-base font-medium text-gray-900 hover:bg-gray-100">
                     <svg className="flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -305,7 +305,7 @@ export default function Layout(props:any){
                 </div>
 
               </div></> : 
-                            <svg onClick={()=>props.swiped()} className="w-8 h-8 cursor-pointer hover:animate-bounce mr-5 " version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+                            <svg onClick={()=>props.swiped(0)} className="w-8 h-8 cursor-pointer hover:animate-bounce mr-5 " version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
                             viewBox="0 0 330 330">
                          <path fill={props.text} id="XMLID_224_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
                            l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393

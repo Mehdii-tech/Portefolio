@@ -79,7 +79,7 @@ export default function FormContact(){
       };
     
     return(
-      <div className=" container mx-auto px-4  ">
+      <div className=" container mx-auto px-4 sm:overflow-y-hidden overflow-y-visible ">
       <form onSubmit={handleSubmit(sendEmail)} className=" w-full max-w-lg  space-y-3 ">
       <div className="flex flex-wrap justify-center -mx-3 ">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
