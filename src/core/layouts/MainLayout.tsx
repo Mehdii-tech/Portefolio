@@ -194,7 +194,7 @@ export default function Layout(props:any){
       </div>
       <div className="-mr-2 -my-2 xs:hidden ">
         <Menu>
-        <Menu.Button as="a" className={` rounded-md p-2 inline-flex items-center justify-center text-[${props.text}]  focus:outline-none `} aria-expanded="false" > 
+        <Menu.Button as="a" className={` rounded-md p-2 inline-flex items-center justify-center text-[${props.text}] outline-none focus:outline-none `} aria-expanded="false" > 
           <span className="sr-only">Open menu</span>
         
           <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -203,7 +203,7 @@ export default function Layout(props:any){
         
         </Menu.Button>
         <Menu.Items as="div">
-        <div className="absolute outline-none right-0 z-5 -ml-4 mt-3 transform px-2  sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+        <div className="absolute outline-none focus:outline-none right-0 z-5 -ml-4 mt-3 transform px-2  sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
             <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
               <div className="relative  grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                 <Link  href="/">
