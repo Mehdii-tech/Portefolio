@@ -52,7 +52,7 @@ export default function FormContact(){
           ...data,
           'g-recaptcha-response': captchaResponse ,
         };
-        console.log(params,'z')
+      
     
       emailjs.init("user_0EML66OWCx4yl7fQTQgqg")
        setFormSubmitted({ title: 'Sending message...', paragraph: '' });
