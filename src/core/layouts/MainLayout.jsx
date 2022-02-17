@@ -4,13 +4,13 @@ import { useRouter  } from "next/router";
 import userData from '../constants/personaldata';
 import useSound from 'use-sound';
 
-export default function Layout(props:any){
+export default function Layout(props){
     
     const router = useRouter()
 
     const [play] = useSound("assets/sounds/sound.mp3");
 
-    const swipe = (number:number) =>{
+    const swipe = (number) =>{
       play()
       props.swiped(number)
     }
