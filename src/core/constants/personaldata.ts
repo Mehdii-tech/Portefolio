@@ -3,6 +3,7 @@ const userData = {
     name: "Mehdi Jabbour",
     designation: "Full-Stack Junior Developer",
     email: "mehdi.jabbour@gmail.com",
+    cv:"/cv-mehdi-jabbour.pdf",
     about: {
       title:
         "Hello world, i am a junior developer who dream of becoming a full stack developer",
