@@ -3,13 +3,12 @@ import { Menu, Transition } from "@headlessui/react";
 import { useRouter  } from "next/router";
 import userData from '../constants/personaldata';
 import useSound from 'use-sound';
-import music from '../../../public/assets/sounds/sound.mp3';
 
 export default function Layout(props:any){
     
     const router = useRouter()
 
-    const [play] = useSound(music);
+    const [play] = useSound("assets/sounds/sound.mp3");
 
     const swipe = (number:number) =>{
       play()
