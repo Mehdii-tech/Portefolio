@@ -3,8 +3,7 @@ import { Menu, Transition } from "@headlessui/react";
 import { useRouter  } from "next/router";
 import userData from '../constants/personaldata';
 import useSound from 'use-sound';
-import music from '../../../public/assets/sounds/sound.mp3'
-import { useState, useEffect} from 'react';
+import music from '../../../public/assets/sounds/sound.mp3';
 
 export default function Layout(props:any){
     
