@@ -37,7 +37,23 @@ module.exports = {
       ...defaultTheme.screens,
     },
     maxWidth: {
+      "2xl": "15rem",
+      "3xl": "28rem",
+      "4xl": "50rem",
+      "5xl": "70rem",
+      "6xl": "90rem",
       "8xl": "110rem",
+    },
+    letterSpacing: {
+      tightest: "-.075em",
+      tighter: "-.05em",
+      tight: "-.025em",
+      normal: "0",
+      wide: ".025em",
+      wider: ".05em",
+      widest: ".1em",
+      moyen: "4rem",
+      enorme: "7rem",
     },
     extend: {
       fontFamily: {

@@ -134,10 +134,16 @@ export default function FormContact(){
       </div>
       <div className="flex flex-wrap justify-center -mx-3 ">
           <div className=" w-full md:w-1/2 px-3 ">      
-
-          <button disabled={!captchaResponse} className="shadow bg-gray-500 cursor-pointer hover:bg-gray-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300" type="submit">
+          <button
+                type="submit"
+                className="bg-gray-800 hover:bg-gray-700 transition rounded-md focus:text-gray-50 hover:text-gray-50  p-4 text-sm font-bold"
+                disabled={!captchaResponse}
+              >
+                Send Message!
+              </button>
+          {/* <button  className="shadow bg-gray-500 cursor-pointer hover:bg-gray-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300" type="submit">
               Send
-          </button>
+          </button> */}
           </div>
           <div className="md:w-2/3"></div>
           <div className="flex flex-col items-center">

@@ -7,17 +7,11 @@ const Contact:NextPage=()=>{
 
     return(
         <Layout>
-            <div className="flex-col mx-auto text-center">
-                    <div className=' n0 text-5xl xs:text-6xl lg:text-7xl xs:space-x-10 lg:space-x-32 justify-center items-center '>
-                        <span >C</span>
-                        <span >O</span>
-                        <span >N</span>
-                        <span >T</span>
-                        <span >A</span>
-                        <span >C</span>
-                        <span >T</span>
-                    </div>
-            </div>          
+            <div className=" xl:max-w-6xl flex-col  text-center max-w-2xl  xs:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto   ">
+                <h1 className=" text-6xl md:text-75xl font-bold  text-center ">
+                Contact Me.
+                </h1>
+            </div>  
             <FormContact />
         </Layout>
     )

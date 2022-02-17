@@ -3,6 +3,15 @@ const withImages = require("next-images");
 const optimizedImages = require("next-optimized-images");
 /** @type {import('next').NextConfig} */
 module.exports = {
+  webpack(config, options) {
+    config.module.rules.push({
+      test: /\.mp3$/,
+      use: {
+        loader: "url-loader",
+      },
+    });
+    return config;
+  },
   module: {
     rules: [
       {
@@ -14,6 +23,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  experimental: {
+    turboMode: true,
   },
   reactStrictMode: true,
   images: {

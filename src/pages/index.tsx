@@ -24,6 +24,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import school from '../../public/assets/img/1/school.jpg'
 import help from '../../public/assets/img/1/help.jpg'
+import { RoughNotationGroup } from 'react-rough-notation';
+import { RainbowHighlight } from '../core/components/RainbowHighlight';
 
 // install Swiper modules
 SwiperCore.use([Pagination, Mousewheel]);
@@ -49,7 +51,7 @@ const Home: NextPage = () => {
       window.removeEventListener('resize', updateMobile)
     }
   }, [])
-
+  const colors = ["#65635e", "#c38b71", "#374151"];
 
   const initialState = {
     text: '#c5cec3',
@@ -86,35 +88,31 @@ const Home: NextPage = () => {
 <Layout mobile={mobile} index={index} text={text} bg={bg} clicked={clicked} swiped={handleExternalChangeSlide}  >
     <Swiper speed={50}  direction={'vertical'} slidesPerView={1} spaceBetween={0} mousewheel={{sensitivity:1}}  centeredSlides={true} pagination={true}
             onSlideChange={(swiper) => slideChange(swiper.activeIndex)} className="mySwiper"  onSwiper={setSwiperInstance} >                   
-            <SwiperSlide className="  flex-col waviy " >  
-                      <div className=' n1 xs:text-7xl lg:text-8xl lg:space-x-36 text-6xl space-x-8 xs:space-x-11 justify-center items-center '>
-                        <span>W</span>
-                        <span>E</span>
-                        <span >L</span>
-                        <span >C</span>
-                        <span >O</span>
-                        <span >M</span>
-                        <span >E</span>
-                      </div>
-                      <div className=' n1 xs:text-7xl lg:text-8xl lg:space-x-36 text-6xl space-x-8 xs:space-x-11 justify-center items-center '>
-                        <span >T</span>
-                        <span >O</span>
-                        <span ></span>
-                        <span >M</span>
-                        <span >Y</span>
-
-                      </div>
-                      <div className=' n1 lg:text-5xl text-4xl space-x-6  justify-center items-center '>
-                      <span >P</span>
-                        <span >O</span>
-                        <span >R</span>
-                        <span >T</span>
-                        <span >F</span>
-                        <span >O</span>
-                        <span >L</span>
-                        <span >I</span>
-                        <span >O</span>
-                      </div>
+            <SwiperSlide className="  flex-col waviy  " >  
+                    <div className=" xl:max-w-6xl   max-w-3xl xs:max-w-4xl lg:max-w-5xl mx-auto ">
+                    <RoughNotationGroup show={true} >
+                      <RainbowHighlight color={colors[0]}>
+                      <h1 onMouseEnter={()=>setState({ text:initialState.text, bg: colors[0] })} onMouseLeave={()=>setState(initialState)} className=" text-5xl xs:text-6xl md:text-75xl lg:tracking-moyen font-bold   ">
+                        WELCOME
+                      </h1>
+                      </RainbowHighlight>
+                    </RoughNotationGroup>
+                    </div>
+                    <div className=" xl:max-w-6xl   max-w-3xl xs:max-w-4xl lg:max-w-5xl mx-auto ">
+                    <RoughNotationGroup show={true}>
+                      <RainbowHighlight color={colors[1]}>
+                      <h1 onMouseEnter={()=>setState({ text:initialState.text, bg: colors[1] })} onMouseLeave={()=>setState(initialState)} className="  text-5xl xs:text-6xl md:text-75xl lg:tracking-moyen font-bold   ">
+                        TO MY
+                      </h1>
+                      </RainbowHighlight></RoughNotationGroup>
+                    </div>
+                    <div className=" xl:max-w-6xl max-w-3xl  xs:max-w-4xl lg:max-w-5xl mx-auto ">
+                    <RoughNotationGroup show={true}>
+                      <RainbowHighlight color={colors[2]}>
+                      <h1 onMouseEnter={()=>setState({ text:initialState.text, bg: colors[2] })} onMouseLeave={()=>setState(initialState)} className="  text-5xl xs:text-6xl md:text-75xl lg:tracking-moyen font-bold   ">
+                        Portefolio
+                      </h1></RainbowHighlight></RoughNotationGroup>
+                    </div>
                       		
                       </SwiperSlide>
                       <SwiperSlide  className='flex-col '>
@@ -124,7 +122,7 @@ const Home: NextPage = () => {
                             src={school}
                             alt="loginpagemini"
                             width={260}
-                            height={260}
+                            height={230}
                             className="  block   rounded-lg"
                             onClick={()=>setIsClicked(true)}
                             quality={100}
@@ -194,7 +192,7 @@ const Home: NextPage = () => {
                             src={help}
                             alt="help"
                             width={260}
-                            height={260}
+                            height={230}
                             className="  block   rounded-lg"
                             onClick={()=>setIsClicked(true)}
                             objectFit='cover'

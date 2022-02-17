@@ -1,18 +1,46 @@
 import type { NextPage } from 'next'
 import Layout from '../core/layouts/MainLayout'
-import Link from 'next/link'
+import Image from 'next/image';
+import userData from "../core/constants/personaldata";
+import js from '../../public/assets/img/stacks/javascript.png'
 
 const About: NextPage = () => {
   return (
     <>
       <Layout>
-      <style jsx global>{`
+
+    <section className=" sm:pb-20 pb-52  sm:overflow-y-hidden  ">
+    <style jsx global>{`
       body {
         overflow-y: visible;
       }
     `}</style>
-        <div className=" flex mx-auto space-x-6 xl:space-x-48 sm:pb-12 pb-32 ">
-          <div className=' ml-auto  justify-center items-center mb-10  hidden lg:flex '>
+      <div className=" xl:max-w-6xl max-w-2xl  xs:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto  md:h-48 ">
+        <h1 className=" text-6xl md:text-75xl font-bold  text-center md:text-left">
+          About Me.
+        </h1>
+      </div>
+      <div className="  ">
+        <div className="text-container max-w-2xl  xs:max-w-3xl md:max-w-4xl xl:max-w-6xl lg:max-w-5xl  mx-auto ">
+          <p
+            className="leading-loose text-2xl md:text-4xl font-semibold  mx-4"
+            style={{ lineHeight: "3rem" }}
+          >
+            {userData.about.title}. Currently I am studying at {" "}
+            <a
+              className="bg-[#65635e] rounded-md px-2 py-1 text-white"
+              href={userData.about.currentProjectUrl}
+            >
+              {userData.about.currentProject} ✈️
+            </a>
+          </p>
+        </div>
+      </div>
+      <div className=" px-4 md:mr-24 ">
+        <div className=" md:pt-20 grid grid-cols-1 md:grid-cols-3 max-w-2xl  xs:max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto gap-y-20 xl:gap-x-36 gapx-x-20 md:gap-x-48 md:space-x-20 lg:space-x-8 ">
+          {/* Social Buttons */}
+          <div className="inline-flex flex-col   ">
+          <div className='   justify-start items-center mb-10  hidden md:flex '>
             <div className="p perspective-text">
               <div className="p perspective-line">
                 <p></p>
@@ -35,35 +63,64 @@ const About: NextPage = () => {
               </div>
             </div>
           </div>
-
-            <div className=" xxl:justify-start text-left h-full  mr-auto  flex items-center justify-center ">
-            <div className=" flex flex-col xxl:w-1/2 xl:w-1/3 lg:w-3/4 md:w-3/4 sm:w-3/4 space-y-10 py-12 ">
-              <p className="  font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">Hello World</p>
-              <h1 className="text-4xl space-y-2 tracking-tight font-extrabold  sm:text-5xl md:text-7xl">
-                <p className="block hover:animate-bounce  xl:inline">Jabbour.M, </p>
-                <span className="block text-gray-700 xl:inline">full stack web developer</span>
-              </h1>
-
-              <p className=" leading-8  mb-5 text-base font-medium tracking-tighter  sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                who loves sleek designs and interfaces. Passionate about security/ia and heavy work, i&apos;m here to do what you want
+          </div>
+          
+          <div className=" text-container col-span-1 md:col-span-2">
+            {userData.about.description?.map((desc, idx) => (
+              <p
+                key={idx}
+                className="text-xl text-[#c38b71] mb-4  "
+              >
+                {desc}
               </p>
+            ))}
 
-              <br></br>
-              <div className=" inline-flex  space-x-4 xxl:text-sm xl:text-sm lg:text-sm md:text-sm sm:text-xs xs:text-xs xxs:text-xs font-bold px-2  flex-row w-full ">
+            <h1 className="bg-[#65635e] text-3xl rounded-md px-2 py-1 inline-block font-bold text-gray-50">
+              Tech Stack
+            </h1>
+            <div className="flex flex-row flex-wrap mt-8">
 
-                <Link href="/" >
-                  <a className="space-x-1 animate-bounce  inline-flex "><span className="font-normal">↗</span><span className="tracking-tight">See my Projects</span></a>
-                </Link>
-                <Link href="/contact" >
-                  <a className=" inline-flex   cursor-pointer  ">
-                    <span className="text-gray-700 space-x-1 tracking-tight"><svg className="w-4 hidden xs:inline-flex text-gray-700" viewBox="0 0 24 24"><path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10zm-2 0a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8zm-9 6v-7h2v7h-2zm1-8.75a1.21 1.21 0 0 1-.877-.364A1.188 1.188 0 0 1 10.75 8c0-.348.123-.644.372-.886.247-.242.54-.364.878-.364.337 0 .63.122.877.364.248.242.373.538.373.886s-.124.644-.373.886A1.21 1.21 0 0 1 12 9.25z" fill="currentColor"></path></svg>More informations</span>
-                  </a>
-                </Link>
-              </div>
+              <img
+                src="assets/img/stacks/javascript.png"
+                className="h-20 w-20 mx-4 my-4"
+              />
+              <img
+                src="assets/img/stacks/typescript.png"
+                className="h-20 w-20 mx-4 my-4"
+              />
+              <img
+                src="assets/img/stacks/rest-api.png"
+                className="h-20 w-20 mx-4 my-4"
+              />
+              <img
+                src="assets/img/stacks/microservices.png"
+                className="h-20 w-20 mx-4 my-4"
+              />
+              <img
+                src="assets/img/stacks/nodejs.png"
+                className="h-20 w-20 mx-4 my-4"
+              />
+              <img
+                src="assets/img/stacks/nestjs.png"
+                className="h-20 w-20 mx-4 my-4"
+              />
+              <img
+                src="assets/img/stacks/springboot.png"
+                className="h-20 w-20 mx-4 my-4"
+              />              
+              <img
+                src="assets/img/stacks/angular.png"
+                className="h-20 w-20 mx-4 my-4"
+              />
+              <img
+                src="assets/img/stacks/react.png"
+                className="h-20 w-20 mx-4 my-4"
+              />
             </div>
-          </div> 
-
-</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
       </Layout>
     </>
