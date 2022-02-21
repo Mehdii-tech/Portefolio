@@ -356,7 +356,7 @@ p {
 .waviy h1:hover {
   position: relative;
   display: inline-block;
-
+  text-shadow: 0 0 10px whitesmoke;
   text-transform: uppercase;
   animation: flip 3s infinite;
   animation-delay: calc(1s * var(--i));
@@ -364,7 +364,6 @@ p {
 @keyframes flip {
   0%,
   80% {
-    text-shadow: 0 0 10px whitesmoke;
     transform: rotateX(360deg);
   }
 }
