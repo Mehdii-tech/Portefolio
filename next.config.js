@@ -1,5 +1,4 @@
 const { createSecureHeaders } = require("next-secure-headers");
-const withImages = require("next-images");
 const optimizedImages = require("next-optimized-images");
 /** @type {import('next').NextConfig} */
 module.exports = {
@@ -24,9 +23,9 @@ module.exports = {
       },
     ],
   },
-  experimental: {
-    turboMode: true,
-  },
+  // experimental: {
+  //   turboMode: true,
+  // },
   reactStrictMode: true,
   images: {
     deviceSizes: [320, 425, 640, 768, 1024, 1280, 1440, 2560],

@@ -27,7 +27,7 @@ const About: NextPage = () => {
             style={{ lineHeight: "3rem" }}
           >
             {userData.about.title}. Currently I am studying at {" "}
-            <a
+            <a 
               className="bg-[#65635e] rounded-md px-2 py-1 text-white"
               href={userData.about.currentProjectUrl}
             >
@@ -40,12 +40,14 @@ const About: NextPage = () => {
         <div className=" md:pt-20 grid grid-cols-1 md:grid-cols-3 max-w-2xl  xs:max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto gap-y-20 xl:gap-x-36 gapx-x-20 md:gap-x-48 md:space-x-20 lg:space-x-8 ">
           {/* Social Buttons */}
           <div className="inline-flex flex-col   ">
-          <div className='   justify-start items-center mb-10  hidden md:flex '>
+          <div  className='   justify-start items-center mb-10  hidden md:flex '>
             <div className="p perspective-text">
               <div className="p perspective-line">
                 <p></p>
               </div>
+              <a href={userData.cv} download  >
               <div className="p perspective-line">
+                
                 <p>Patience</p>
                 <p>Is The</p>
               </div>
@@ -60,7 +62,7 @@ const About: NextPage = () => {
               <div className="p perspective-line">
                 <p>Virtue</p>
                 <p></p>
-              </div>
+              </div></a>
             </div>
           </div>
           </div>
