@@ -308,14 +308,14 @@ export default function Layout(props){
         
           
               {props.index != 3 ?
-                              <>{!props.mobile ?                        <>      <span className=" mt-16  pr-2 ">Scroll</span><div className="scroll-downs  ">
-                <div className="mousey border-white fixed ">
+                              <>{!props.mobile ?                        <>      <span className=" mt-16 cache2 pr-2 ">Scroll</span><div className="scroll-downs  ">
+                <div className="mousey border-white fixed marged ">
                   <div className="scroller  bg-white"></div>
                 </div>
 
               </div></>:
-              <div className='wrapper'>
-                <svg id="Swipe-vertical_1" className='inline-block w-20 h-20 ' data-name="Swipe vertical 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+              <div className="wrapper items-end marged ">
+                <svg id="Swipe-vertical_1" className='inline-block w-20 h-20  ' data-name="Swipe vertical 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
                 <path className="hand-y" fill={props.text} d="M131.09,69.21l-34,24.17-21.6-21.6a9.25,9.25,0,0,0-13.08,0h0a9.25,9.25,0,0,0,0,13.08L103,125.43l-14.18-1.08c-5.11,0-8.72,3.22-9.25,9.25,0,0-1,9.25,3.83,9.25h48l30.14-30.14A9.25,9.25,0,0,0,162.72,101L143.43,72.11A9.28,9.28,0,0,0,131.09,69.21Z"/>
                 <g className="swipe-vertical">
                   <path className="line-vertical" fill={props.text} d="M43.94,94.27c-12.46-19.69,0-37,0-37"/>

@@ -87,29 +87,29 @@ const Home: NextPage = () => {
   return (
 <Layout mobile={mobile} index={index} text={text} bg={bg} clicked={clicked} swiped={handleExternalChangeSlide}  >
     <Swiper speed={50}  direction={'vertical'} slidesPerView={1} spaceBetween={0} mousewheel={{sensitivity:1}}  centeredSlides={true} pagination={true}
-            onSlideChange={(swiper) => slideChange(swiper.activeIndex)} className="mySwiper"  onSwiper={setSwiperInstance} >                   
-            <SwiperSlide className="  flex-col waviy  " >  
-                    <div className=" xl:max-w-6xl   max-w-3xl xs:max-w-4xl lg:max-w-5xl mx-auto ">
+            onSlideChange={(swiper) => slideChange(swiper.activeIndex)} className="mySwiper "  onSwiper={setSwiperInstance} >                   
+            <SwiperSlide className=" flex-col waviy  " >  
+                    <div className=" xl:max-w-6xl minscreen  max-w-3xl xs:max-w-4xl lg:max-w-5xl mx-auto ">
                     <RoughNotationGroup show={true} >
                       <RainbowHighlight color={colors[0]}>
-                      <h1 onMouseEnter={()=>setState({ text:initialState.text, bg: colors[0] })} onMouseLeave={()=>setState(initialState)} className=" text-5xl xs:text-6xl md:text-75xl lg:tracking-moyen font-bold   ">
+                      <h1 onMouseEnter={()=>setState({ text:initialState.text, bg: colors[0] })} onMouseLeave={()=>setState(initialState)} className=" minscreen text-5xl xs:text-6xl md:text-75xl lg:tracking-moyen font-bold   ">
                         WELCOME
                       </h1>
                       </RainbowHighlight>
                     </RoughNotationGroup>
                     </div>
-                    <div className=" xl:max-w-6xl   max-w-3xl xs:max-w-4xl lg:max-w-5xl mx-auto ">
+                    <div className=" xl:max-w-6xl minscreen  max-w-3xl xs:max-w-4xl lg:max-w-5xl mx-auto ">
                     <RoughNotationGroup show={true}>
                       <RainbowHighlight color={colors[1]}>
-                      <h1 onMouseEnter={()=>setState({ text:initialState.text, bg: colors[1] })} onMouseLeave={()=>setState(initialState)} className="  text-5xl xs:text-6xl md:text-75xl lg:tracking-moyen font-bold   ">
+                      <h1 onMouseEnter={()=>setState({ text:initialState.text, bg: colors[1] })} onMouseLeave={()=>setState(initialState)} className=" minscreen text-5xl xs:text-6xl md:text-75xl lg:tracking-moyen font-bold   ">
                         TO MY
                       </h1>
                       </RainbowHighlight></RoughNotationGroup>
                     </div>
-                    <div className=" xl:max-w-6xl max-w-3xl  xs:max-w-4xl lg:max-w-5xl mx-auto ">
+                    <div className=" xl:max-w-6xl max-w-3xl minscreen  xs:max-w-4xl lg:max-w-5xl mx-auto ">
                     <RoughNotationGroup show={true}>
                       <RainbowHighlight color={colors[2]}>
-                      <h1 onMouseEnter={()=>setState({ text:initialState.text, bg: colors[2] })} onMouseLeave={()=>setState(initialState)} className="  text-5xl xs:text-6xl md:text-75xl lg:tracking-moyen font-bold   ">
+                      <h1 onMouseEnter={()=>setState({ text:initialState.text, bg: colors[2] })} onMouseLeave={()=>setState(initialState)} className=" minscreen text-5xl xs:text-6xl md:text-75xl lg:tracking-moyen font-bold   ">
                         Portefolio
                       </h1></RainbowHighlight></RoughNotationGroup>
                     </div>
@@ -254,7 +254,7 @@ const Home: NextPage = () => {
                       <SwiperSlide className='flex-col  '>
                       <span className='n0 text-2xl  '>It was my biggest works</span>
                       <div className='inline-flex space-x-4 n0 text-2xl ' ><span className=' '>Want to see<Link href="https://github.com/Mehdii-tech"><a target="_blank" className='n0 text-2xl hover:underline '> More </a></Link>?</span></div>
-                      <p className='n1 text-5xl mt-16 '>OR</p>
+                      <p className='n1 text-5xl cache2 mt-16 '>OR</p>
                       </SwiperSlide>
         </Swiper>
   </Layout>
