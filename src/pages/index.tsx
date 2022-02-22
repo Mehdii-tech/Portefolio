@@ -86,7 +86,7 @@ const Home: NextPage = () => {
   
   return (
 <Layout mobile={mobile} index={index} text={text} bg={bg} clicked={clicked} swiped={handleExternalChangeSlide}  >
-    <Swiper speed={50}  direction={'vertical'} slidesPerView={1} spaceBetween={0} mousewheel={{sensitivity:1}}  centeredSlides={true} pagination={true}
+    <Swiper speed={2500}  direction={'vertical'} slidesPerView={1} spaceBetween={0} mousewheel={{sensitivity:1}}  centeredSlides={true} pagination={true}
             onSlideChange={(swiper) => slideChange(swiper.activeIndex)} className="mySwiper "  onSwiper={setSwiperInstance} >                   
             <SwiperSlide className=" flex-col waviy  " >  
                     <div className=" xl:max-w-6xl minscreen  max-w-3xl xs:max-w-4xl lg:max-w-5xl mx-auto ">
